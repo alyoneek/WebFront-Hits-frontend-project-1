@@ -12,3 +12,9 @@ body {
     height: 100vh;
     background: radial-gradient(40.14% 47.79% at 74.17% 59.86%, #372835 0.52%, #282A43 100%);
 }
+
+.mx-auto {
+    height: 500px;
+    background: black;
+    max-width: 500px;
+}
