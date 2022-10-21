@@ -3,17 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>MovieCatalog</title>
-    <link rel="stylesheet" href="/styles/style.css">
     <link rel="stylesheet" href="/styles/bootstrap.css">
+    <link rel="stylesheet" href="/styles/style.css">
 <body>
-    <div class="container my-5">
+    <section id="catalog" class="container my-5">
         <div class="card">
-            <div class="card-body">
-                dgdgdfg
+            <div class="row px-2 py-2">
+                <div class="col-md-1">
+                    <img src="1920x.webp" class="img-fluid" alt="">
+                </div>
+                <div class="col">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h2 class="card-title">Бэтмен</h2>
+                                <p class="year">2023</p>
+                                <p class="country">США • триллер</p>
+                            </div>
+                            <div class="rating">
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-solid fa-star"></i>
+                                    <h5 class="score-value">9.0</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <Script src="js/bootstrap.bundle.min.js"></Script>
+    <script src="https://kit.fontawesome.com/a3ceedbc1a.js" crossorigin="anonymous"></script>
 </body>
 </html>
