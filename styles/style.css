@@ -17,3 +17,43 @@ body {
     background: black;
     max-width: 500px;
 }
+
+/* Pagination */
+ 
+.pagination .page-item .page-link {
+    background: #22242F;
+    border: 3px solid #373743;
+    color: #BEBEBE; 
+    font-weight: 600;
+    font-size: 1.1em;
+    text-align: center;
+    margin-right: 3px;
+    transition: ease 0.4s;
+}
+
+.pagination .page-item .page-link:focus {
+    box-shadow: none;
+}
+
+.pagination .num-item .page-link {
+    border-radius: 50%;
+    min-width: 2.9rem;
+}
+
+.pagination .num-item .page-link:hover {
+    color: #ffffff; 
+    background: #373743;
+}
+
+.pagination .direction-item .page-link {
+    border-radius: 20px;
+    width: 3.5rem;
+    font-size: 1.5em;
+    line-height: 2rem;
+}
+
+.pagination .direction-item .page-link:hover {
+    color: #F13E45;
+ 
+    font-size: 1.7em;
+}
