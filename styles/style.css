@@ -54,11 +54,16 @@ body {
 }
 
 #catalog .card:hover {
-    background-color: #373841;
+    background-color: #373743;
 }
 
 #catalog .card img {
     border-radius: 30px;
+}
+
+#catalog .card .img-fluid {
+    width: 100%;
+    height: 100%;
 }
 
 #catalog .card-body {
@@ -93,6 +98,7 @@ body {
 @media (min-width: 768px) {
     #catalog .card .col-md-1 {
         width: 140px;
+        height: 170px;
     }
 }
 
@@ -115,7 +121,8 @@ body {
 
 .pagination .num-item .page-link {
     border-radius: 50%;
-    min-width: 2.9rem;
+    width: 3rem;
+    height: 3rem;
 }
 
 .pagination .num-item .page-link:hover {
@@ -132,6 +139,5 @@ body {
 
 .pagination .direction-item .page-link:hover {
     color: #F13E45;
- 
     font-size: 1.7em;
 }
