@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -10,6 +12,7 @@ html{
 
 body {
     background: radial-gradient(40.14% 47.79% at 74.17% 59.86%, #372835 0.52%, #282A43 100%) fixed;
+    font-family: 'Inter';
 }
 
 /* Navbar */
@@ -39,6 +42,58 @@ body {
 
 .navbar .nav-item .nav-link:hover {
     color: #ffffff;
+}
+
+/* card */
+
+#catalog .card {
+    background-color: #22242F;
+    border: 3px solid #373743;
+    border-radius: 40px;
+    transition: ease 0.6s;
+}
+
+#catalog .card:hover {
+    background-color: #373841;
+}
+
+#catalog .card img {
+    border-radius: 30px;
+}
+
+#catalog .card-body {
+    padding-left: 0;
+    color: #fff;
+}
+
+#catalog .card-body .card-title {
+    font-weight: 800;
+}
+
+#catalog .card-body .rating {
+    background-color: #38352D;
+    padding: 3px 10px;
+    border: 1px solid #886F1D;
+    border-radius: 40px;
+}
+
+#catalog .card-body .year, .country {
+    margin: 0;
+    color: #898A93;
+}
+
+#catalog .card-body .fa-star {
+    color: #FFC700;
+}
+
+#catalog .card-body .score-value {
+    margin: 0 0 0 5px;
+}
+
+@media (min-width: 768px) {
+    #catalog .card .col-md-1 {
+        width: 140px;
+    }
 }
 
 /* Pagination */
