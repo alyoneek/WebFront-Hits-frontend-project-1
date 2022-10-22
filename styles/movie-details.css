@@ -3,9 +3,10 @@
     border-radius: 50px;
 }
 
-h1, h2 {
+h1, h2, h5 {
     color: #fff;
     font-weight: 700;
+    margin: 0;
 }
 
 p {
@@ -34,5 +35,45 @@ p {
 }
 
 .single-info__title {
+    color: #898A93;
+}
+
+#comments .card {
+    background-color: transparent;
+    border-radius: 40px;
+}
+
+#comments .card.green {
+    border: 2px solid #2E3E37;
+}
+
+#comments .card.red {
+    border: 2px solid #892C2F;
+}
+
+#comments .card.green .card-header {
+    border-bottom: 2px solid #2E3E37;
+}
+
+#comments .card.red .card-header {
+    border-bottom: 2px solid #892C2F;
+}
+
+#comments .card.green .card-body p {
+    color: #558B51;
+}
+
+#comments .card.red .card-body p {
+    color: #892C2F;
+}
+
+#comments .card .user-info img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+#comments .card .rating-info p {
+    margin: 0;
     color: #898A93;
 }
