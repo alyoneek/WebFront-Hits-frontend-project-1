@@ -1,0 +1,38 @@
+.container {
+    background: radial-gradient(36.55% 53.71% at 75.47% 46.29%, #312837 0%, #22242F 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    border-radius: 50px;
+}
+
+h1, h2 {
+    color: #fff;
+    font-weight: 700;
+}
+
+p {
+    color: #E1E1E1;
+    font-size: 16px;
+    line-height: 1.3em;
+}
+
+.btn {
+    background-color: #B93338;
+    color: #22242F;
+    font-weight: 500;
+    border-radius: 41px;
+}
+
+.btn i {
+    color:#22242F;
+}
+
+.single-info {
+    border-bottom: 1px solid #898A93;
+}
+
+.single-info p {
+    margin: 7px;
+}
+
+.single-info__title {
+    color: #898A93;
+}
