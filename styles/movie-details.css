@@ -19,6 +19,10 @@ p {
     border-radius: 41px;
 }
 
+.form-control:focus, .form-select:focus {
+    box-shadow: none;
+}
+
 #movie-info .brief-description {
     color: #E1E1E1;
 }
@@ -57,24 +61,35 @@ p {
     border-bottom: 2px solid #65656F;
 }
 
-#adding-review .card-body .review-body {
-    border: 1px solid #65656F;
-    border-radius: 40px;
+#adding-review .form-label {
+    font-weight: 700;
+    font-size: 1.1rem;
 }
 
-#adding-review .rate-body .btn {
-    background: #22242F;
+#adding-review .review-body, #adding-review .rate-body {
     border: 1px solid #65656F;
-    min-width: 100px;
+    border-radius: 40px;
+    background-color: #22242F;
+}
+
+#adding-review .review-body {
+    height: 300px;
+}
+
+#adding-review .rate-body {
+    background-position: right 1rem center;
+    background-size: 20px 20px;
+    width: 100px;
     line-height: 25px;
     font-size: 20px;
+    font-weight: 500;
     text-align: start;
 }
 
-#adding-review .rate-body .dropdown-toggle::after {
-    border: none;
+#adding-review .rate-body::after {
     font-family: "Font Awesome 5 Free";
     content: "\f107";
+    color: red;
     vertical-align: middle;
     font-weight: 700;
     font-size: 1.2em;

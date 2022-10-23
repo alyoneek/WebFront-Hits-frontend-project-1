@@ -69,36 +69,35 @@
                     <h5>Добавить отзыв</h5>
                 </div>
                 <div class="card-body px-5">
-                    <h6 class="review-title">Текст отзыва</h6>
-                    <p class="review-body py-3 px-4 my-3">
-                        fgdfgd
-                    </p>
-                    <h6 class="rate-title">Оценка</h6>
-                    <div class="rate-body dropdown my-3">
-                        <a class="btn btn-secondary dropdown-toggle py-3 px-4" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                          10
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                          <li><a class="dropdown-item" href="#">1</a></li>
-                          <li><a class="dropdown-item" href="#">2</a></li>
-                          <li><a class="dropdown-item" href="#">3</a></li>
-                          <li><a class="dropdown-item" href="#">4</a></li>
-                          <li><a class="dropdown-item" href="#">5</a></li>
-                          <li><a class="dropdown-item" href="#">6</a></li>
-                          <li><a class="dropdown-item" href="#">7</a></li>
-                          <li><a class="dropdown-item" href="#">8</a></li>
-                          <li><a class="dropdown-item" href="#">9</a></li>
-                          <li><a class="dropdown-item" href="#">10</a></li>
-                        </ul>
+                    <div class="form" action="" method="POST">
+                        <div class="mb-3">
+                            <label for="inputReviewText" class="review-title form-label">Текст отзыва</label>
+                            <textarea id="inputReviewText" class="review-body form-control text-white py-3 px-4"></textarea>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="rateSelect" class="rate-title form-label">Текст отзыва</label>
+                            <select id="rateSelect" class="rate-body form-select text-white py-3 px-4">
+                                <option value="10" selected>10</option>
+                                <option value="9">9</option>
+                                <option value="8">8</option>
+                                <option value="7">7</option>
+                                <option value="6">6</option>
+                                <option value="5">5</option>
+                                <option value="4">4</option>
+                                <option value="3">3</option>
+                                <option value="2">2</option>
+                                <option value="1">1</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">Оставить отзыв анонимно</label>
+                        </div>
+
+                        <input type="button" value="Сохранить" class="save btn btn-secondary py-3">
                     </div>
-                    
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                          Оставить отзыв анонимно
-                        </label>
-                    </div>
-                    <button type="button" class="save btn btn-secondary mt-3 py-3">Сохранить</button>
                 </div>
             </div>
         </div>
