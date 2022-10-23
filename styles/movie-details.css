@@ -16,14 +16,33 @@ p {
 }
 
 .btn {
-    background-color: #B93338;
     color: #22242F;
     font-weight: 500;
     border-radius: 41px;
 }
 
+.btn:hover, :not(.btn-check)+.btn:active {
+    color: #22242F;
+}
+
 .btn i {
     color:#22242F;
+}
+
+.btn.edit {
+    background-color: #AE8D16;
+}
+
+.btn.edit:hover {
+    background-color: #b3993b;
+}
+
+.btn.add-to-favorites, .btn.delete {
+    background-color: #B93338;
+}
+
+.btn.add-to-favorites, .btn.delete:hover {
+    background-color: #bb4e52;
 }
 
 .single-info {
