@@ -62,6 +62,37 @@ p {
     border-radius: 40px;
 }
 
+#adding-review .rate-body .btn {
+    background: #22242F;
+    border: 1px solid #65656F;
+    min-width: 100px;
+    line-height: 25px;
+    font-size: 20px;
+    text-align: start;
+}
+
+#adding-review .rate-body .dropdown-toggle::after {
+    border: none;
+    font-family: "Font Awesome 5 Free";
+    content: "\f107";
+    vertical-align: middle;
+    font-weight: 700;
+    font-size: 1.2em;
+    color: #3B3C47;
+    position: absolute;
+    left: 50px;
+}
+
+#adding-review .save {
+    background: #3B3C47;
+    border: 1px solid #514444;
+    transition: ease 0.4s;
+}
+
+#adding-review .save:hover {
+    background: #5d5e68;
+}
+
 #comments .card.green {
     border: 2px solid #2E3E37;
 }
