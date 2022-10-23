@@ -74,6 +74,14 @@ p {
     border-bottom: 2px solid #2E3E37;
 }
 
+#comments .card.red .rating-body {
+    background: #892C2F;
+}
+
+#comments .card.green .rating-body {
+    background: #2E3E37;
+}
+
 #comments .card.red .card-header {
     border-bottom: 2px solid #892C2F;
 }
@@ -95,4 +103,20 @@ p {
 #comments .card .rating-info p {
     margin: 0;
     color: #898A93;
+}
+
+#comments .card .rating-body {
+    background-color: #38352D;
+    padding: 3px 10px;
+    border: 1px solid #886F1D;
+    border-radius: 40px;
+}
+
+#comments .card .rating-body .fa-star {
+    color: #FFC700;
+}
+
+#comments .card .rating-body .score-value {
+    margin: 0 0 0 5px;
+    font-weight: 500;
 }
