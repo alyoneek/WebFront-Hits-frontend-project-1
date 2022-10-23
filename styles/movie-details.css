@@ -1,45 +1,64 @@
 .container {
-    background: radial-gradient(36.55% 53.71% at 75.47% 46.29%, #312837 0%, #22242F 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    background: radial-gradient(36.55% 53.71% at 75.47% 46.29%, #312837 0%, #22242F 100%);
     border-radius: 50px;
 }
 
-h1, h2, h5 {
+h1, h2, h5, h6 {
     color: #fff;
     font-weight: 700;
     margin: 0;
 }
 
 p {
-    color: #E1E1E1;
     font-size: 16px;
     line-height: 1.3em;
 }
 
 .btn {
-    background-color: #B93338;
-    color: #22242F;
     font-weight: 500;
     border-radius: 41px;
 }
 
-.btn i {
+#movie-info .brief-description {
+    color: #E1E1E1;
+}
+
+#movie-info .add-to-favorites {
+    background-color: #B93338;
+    color: #22242F;
+}
+
+#movie-info .add-to-favorites i {
     color:#22242F;
 }
 
-.single-info {
+#movie-info .single-info {
     border-bottom: 1px solid #898A93;
 }
 
-.single-info p {
+#movie-info .single-info p {
     margin: 7px;
 }
 
-.single-info__title {
+#movie-info .single-info__title {
     color: #898A93;
 }
 
-#comments .card {
-    background-color: transparent;
+#comments .card, #adding-review .card {
+    background-color: #22242F;
+    border-radius: 40px;
+}
+
+#adding-review .card.gray {
+    border: 2px solid #65656F;
+}
+
+#adding-review .card.gray .card-header {
+    border-bottom: 2px solid #65656F;
+}
+
+#adding-review .card-body .review-body {
+    border: 1px solid #65656F;
     border-radius: 40px;
 }
 
@@ -59,11 +78,11 @@ p {
     border-bottom: 2px solid #892C2F;
 }
 
-#comments .card.green .card-body p {
+#comments .card.green .card-body .card-text {
     color: #558B51;
 }
 
-#comments .card.red .card-body p {
+#comments .card.red .card-body .card-text {
     color: #892C2F;
 }
 

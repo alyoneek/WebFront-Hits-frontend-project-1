@@ -11,56 +11,90 @@
 </head>
 <body>
     <div class="container my-5 py-5 px-5">
-        <div class="row">
-            <div class="col">
-                <img src="../1922x.webp" alt="">
-            </div>
-            <div class="col">
-                <h1>Джокер(2019)</h1>
-                <p class="my-3">Готэм, начало 1980-х годов. Комик Артур Флек живет с больной матерью, которая с детства учит его «ходить с улыбкой». Пытаясь нести в мир хорошее и дарить людям радость, Артур сталкивается с человеческой жестокостью и постепенно приходит к выводу, что этот мир получит от него не добрую улыбку, а ухмылку злодея Джокера.</p>
-                <button type="button" class="btn btn-primary my-3">Добавить в избранное&nbsp&nbsp<i class="fa-solid fa-bookmark"></i></button>
-                <h2 class="my-3">О фильме</h2>
-                <div class="common-info">
-                    <div class="single-info d-flex justify-content-between">
-                        <p class="single-info__title">Год производства:</p>
-                        <p>2019</p>
-                    </div>
-                    <div class="single-info d-flex justify-content-between">
-                        <p class="single-info__title">Страна:</p>
-                        <p>США, Канада</p>
-                    </div>
-                    <div class="single-info d-flex justify-content-between">
-                        <p class="single-info__title">Жанр:</p>
-                        <p>драма, криминал, триллер</p>
-                    </div>
-                    <div class="single-info d-flex justify-content-between">
-                        <p class="single-info__title">Время:</p>
-                        <p>122 мин.</p>
-                    </div>
-                    <div class="single-info d-flex justify-content-between">
-                        <p class="single-info__title">Слоган:</p>
-                        <p>«Сделай счастливое лицо»</p>
-                    </div>
-                    <div class="single-info single-info d-flex justify-content-between">
-                        <p class="single-info__title">Режиссёр:</p>
-                        <p>Тодд Филлипс</p>
-                    </div>
-                    <div class="single-info d-flex justify-content-between">
-                        <p class="single-info__title">Бюджет:</p>
-                        <p>$55 000 000</p>
-                    </div>
-                    <div class="single-info d-flex justify-content-between">
-                        <p class="single-info__title">Сборы в мире:</p>
-                        <p>$1 074 251 311</p>
-                    </div>
-                    <div class="single-info d-flex justify-content-between">
-                        <p class="single-info__title">Возраст:</p>
-                        <p>18+</p>
+        <div id="movie-info">
+            <div class="row text-white">
+                <div class="col">
+                    <img src="../1922x.webp" alt="">
+                </div>
+                <div class="col">
+                    <h1>Джокер(2019)</h1>
+                    <p class="brief-description my-3">Готэм, начало 1980-х годов. Комик Артур Флек живет с больной матерью, которая с детства учит его «ходить с улыбкой». Пытаясь нести в мир хорошее и дарить людям радость, Артур сталкивается с человеческой жестокостью и постепенно приходит к выводу, что этот мир получит от него не добрую улыбку, а ухмылку злодея Джокера.</p>
+                    <button type="button" class="add-to-favorites btn btn-primary my-3">Добавить в избранное&nbsp&nbsp<i class="fa-solid fa-bookmark"></i></button>
+                    <h2 class="my-3">О фильме</h2>
+                    <div class="common-info">
+                        <div class="single-info d-flex justify-content-between">
+                            <p class="single-info__title">Год производства:</p>
+                            <p>2019</p>
+                        </div>
+                        <div class="single-info d-flex justify-content-between">
+                            <p class="single-info__title">Страна:</p>
+                            <p>США, Канада</p>
+                        </div>
+                        <div class="single-info d-flex justify-content-between">
+                            <p class="single-info__title">Жанр:</p>
+                            <p>драма, криминал, триллер</p>
+                        </div>
+                        <div class="single-info d-flex justify-content-between">
+                            <p class="single-info__title">Время:</p>
+                            <p>122 мин.</p>
+                        </div>
+                        <div class="single-info d-flex justify-content-between">
+                            <p class="single-info__title">Слоган:</p>
+                            <p>«Сделай счастливое лицо»</p>
+                        </div>
+                        <div class="single-info single-info d-flex justify-content-between">
+                            <p class="single-info__title">Режиссёр:</p>
+                            <p>Тодд Филлипс</p>
+                        </div>
+                        <div class="single-info d-flex justify-content-between">
+                            <p class="single-info__title">Бюджет:</p>
+                            <p>$55 000 000</p>
+                        </div>
+                        <div class="single-info d-flex justify-content-between">
+                            <p class="single-info__title">Сборы в мире:</p>
+                            <p>$1 074 251 311</p>
+                        </div>
+                        <div class="single-info d-flex justify-content-between">
+                            <p class="single-info__title">Возраст:</p>
+                            <p>18+</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <h2 class="my-3">Отзывы и оценки</h2>
+        <div id ="adding-review">
+            <div class="card gray text-white mb-3 py-2">
+                <div class="card-header px-5">
+                    <h5>Добавить отзыв</h5>
+                </div>
+                <div class="card-body px-5">
+                    <h6>Текст отзыва</h6>
+                    <p class="review-body py-3 px-3 my-3">
+                        fgdfgd
+                    </p>
+                    <h6>Оценка</h6>
+                    <div class="dropdown my-3">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                          10
+                        </a>
+                      
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                          <li><a class="dropdown-item" href="#">1</a></li>
+                          <li><a class="dropdown-item" href="#">2</a></li>
+                          <li><a class="dropdown-item" href="#">3</a></li>
+                          <li><a class="dropdown-item" href="#">4</a></li>
+                          <li><a class="dropdown-item" href="#">5</a></li>
+                          <li><a class="dropdown-item" href="#">6</a></li>
+                          <li><a class="dropdown-item" href="#">7</a></li>
+                          <li><a class="dropdown-item" href="#">8</a></li>
+                          <li><a class="dropdown-item" href="#">9</a></li>
+                          <li><a class="dropdown-item" href="#">10</a></li>
+                        </ul>
+                      </div>
+                </div>
+            </div>
+        </div>
         <div id="comments">
             <div class="card green text-white mb-3 py-2">
                 <div class="card-header px-5">
