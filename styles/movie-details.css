@@ -17,7 +17,8 @@ p {
 .btn {
     color: #22242F;
     font-weight: 500;
-    border-radius: 41px;
+    border-radius: 40px;
+    transition: ease 0.4s;
 }
 
 .btn:hover, :not(.btn-check)+.btn:active {
@@ -33,7 +34,12 @@ p {
 }
 
 .btn.edit:hover {
-    background-color: #b3993b;
+    background-color: #b19c52;
+}
+
+.btn.save {
+    background: #3B3C47;
+    border: 1px solid #514444;
 }
 
 .btn.add-to-favorites, .btn.delete {
@@ -121,12 +127,6 @@ p {
     color: #3B3C47;
     position: absolute;
     left: 50px;
-}
-
-#adding-review .save {
-    background: #3B3C47;
-    border: 1px solid #514444;
-    transition: ease 0.4s;
 }
 
 #adding-review .save:hover {
