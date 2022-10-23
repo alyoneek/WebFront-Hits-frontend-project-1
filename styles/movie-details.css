@@ -15,14 +15,37 @@ p {
 }
 
 .btn {
-    background-color: #B93338;
     color: #22242F;
     font-weight: 500;
     border-radius: 41px;
 }
 
+.btn, .fa-bookmark {
+    transition: ease 0.4s;
+}
+
+.btn.add-to-favorites {
+    background-color: #B93338;
+}
+
+.btn.add-to-favorites.active .fa-bookmark {
+    color: #fff;
+}
+
+.btn.add-to-favorites:hover {
+    background-color: #b94d51;
+}
+
+.btn.add-to-favorites:hover .fa-bookmark {
+    color: #fff;
+}
+
 .btn i {
     color:#22242F;
+}
+
+.movie-poster {
+    border-radius: 40px;
 }
 
 .single-info {
