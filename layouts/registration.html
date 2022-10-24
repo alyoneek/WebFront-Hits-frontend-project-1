@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="../styles/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/registration.css">
+</head>
+<body>
+    <div class="container text-white my-5 py-5 px-5">
+        <form action="" method="POST">
+            <div class="mb-3">
+                <label for="inputLogin" class="form-label">Логин</label>
+                <input type="text" class="form-control" id="inputLogin" required>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3">
+                        <label for="inputPassword" class="form-label">Пароль</label>
+                        <input type="password" class="form-control" id="inputPassword" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="inputEmail" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputBDate" class="form-label">Дата рождения</label>
+                        <input type="date" class="form-control" id="inputBDate" required>
+                    </div>
+              </div>
+                <div class="col">
+                    <div class="mb-3">
+                        <label for="inputPasswordAgain" class="form-label">Подтверждение пароля</label>
+                        <input type="password" class="form-control" id="inputPasswordAgain" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputName" class="form-label">ФИО</label>
+                        <input type="text" class="form-control" id="inputName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="selectSex" class="form-label">Дата рождения</label>
+                        <select class="form-select">
+                            <option selected>Не выбран</option>
+                            <option value="woman">Woman</option>
+                            <option value="man">Man</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/a3ceedbc1a.js" crossorigin="anonymous"></script>
+</body>
+</html>
