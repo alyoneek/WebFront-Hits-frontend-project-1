@@ -114,3 +114,14 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
     background: url(../calendar-white.png) no-repeat;
     background-position: right 0.3rem center;
 }
+
+.profile-photo {
+    background: #22242F;
+    border: 1px solid #65656F;
+    border-radius: 40px;
+}
+
+.profile-photo img {
+    max-width: 100%;
+    border-radius: 40px;
+}
