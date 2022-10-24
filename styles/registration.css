@@ -1,16 +1,3 @@
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-    color: #fff;
-    transition: background-color 5000s ease-in-out 0s;
-}
-
 .container {
     background: radial-gradient(36.55% 53.71% at 75.47% 46.29%, #312837 0%, #22242F 100%);
     border-radius: 50px;
@@ -75,9 +62,28 @@ p {
     color: #fff;
 }
 
+
 .form-label {
     font-weight: 700;
     font-size: 1.1rem;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-box-shadow:0 0 0 50px #22242F inset;
+    -webkit-text-fill-color: rgb(255, 255, 255);
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+input {
+    -webkit-text-fill-color: #fff;
 }
 
 .form-control, .form-select {
