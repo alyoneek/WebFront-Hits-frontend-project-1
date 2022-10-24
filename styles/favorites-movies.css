@@ -5,10 +5,6 @@
     transition: ease 0.6s;
 }
 
-.card.movie:hover {
-    background-color: #373743;
-}
-
 .card.movie img {
     border-radius: 30px;
 }
@@ -32,6 +28,7 @@
     padding: 3px 10px;
     border: 1px solid #886F1D;
     border-radius: 40px;
+    display: inline-block;
 }
 
 .card.movie .card-body .year, .country {
@@ -48,7 +45,7 @@
 }
 
 @media (min-width: 768px) {
-    .card.movie .card .col-md-1 {
+    .card.movie .col-md-1 {
         width: 140px;
         height: 170px;
     }

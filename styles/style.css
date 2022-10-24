@@ -14,3 +14,30 @@ body {
     background: radial-gradient(40.14% 47.79% at 74.17% 59.86%, #372835 0.52%, #282A43 100%) fixed;
     font-family: 'Inter';
 }
+
+h1, h2, h5, h6 {
+    color: #fff;
+    font-weight: 700;
+    margin: 0;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.3em;
+}
+
+
+.btn {
+    color: #22242F;
+    font-weight: 500;
+    border-radius: 40px;
+    transition: ease 0.4s;
+}
+
+.btn.delete {
+    background-color: #B93338;
+}
+
+.btn.delete:hover {
+    background-color: #bb4e52;
+}
