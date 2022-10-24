@@ -37,12 +37,12 @@ p {
     background-color: #b19c52;
 }
 
-.btn.save {
+.btn.save, .btn.registrate {
     background: #3B3C47;
     border: 1px solid #514444;
 }
 
-.btn.save:hover {
+.btn.save:hover, .btn.registrate:hover {
     background: #5d5e68;
 }
 
