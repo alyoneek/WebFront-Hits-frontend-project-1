@@ -29,39 +29,15 @@ p {
     transition: ease 0.4s;
 }
 
-.btn.edit {
-    background-color: #AE8D16;
-}
-
-.btn.edit:hover {
-    background-color: #b19c52;
-}
-
 .btn.save, .btn.registrate {
     background: #3B3C47;
+   
     border: 1px solid #514444;
 }
 
 .btn.save:hover, .btn.registrate:hover {
     background: #5d5e68;
 }
-
-.btn.add-to-favorites, .btn.delete {
-    background-color: #B93338;
-}
-
-.btn.add-to-favorites:hover, .btn.delete:hover {
-    background-color: #bb4e52;
-}
-
-.btn.add-to-favorites.active .fa-bookmark {
-    color: #fff;
-}
-
-.btn.add-to-favorites:hover .fa-bookmark {
-    color: #fff;
-}
-
 
 .form-label {
     font-weight: 700;
@@ -106,25 +82,19 @@ input {
 }
 
 .form-select {
-    background-position: right 1rem center;
-    background-size: 20px 20px;
-    text-align: start;
-}
-
-.form-select {
-    background: url(../down-arrow.png) no-repeat;
+    background-image: url(../down-arrow.png);
     background-position: right 1rem center;
     background-size: 20px 20px;
 }
 
 .form-select:hover {
-    background: url(../down-arrow-white.png) no-repeat;
+    background-image: url(../down-arrow-white.png);
     background-position: right 1rem center;
     background-size: 20px 20px;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
-    background: url(../calendar.png) no-repeat;
+    background: url(../calendar.png) #22242F no-repeat;
     background-position: right 0.3rem center;
     width: 20px;
     height: 20px;
