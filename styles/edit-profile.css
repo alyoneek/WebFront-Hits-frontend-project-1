@@ -31,6 +31,14 @@ p {
     transition: ease 0.4s;
 }
 
+.btn.edit {
+    background-color: #AE8D16;
+}
+
+.btn.edit:hover {
+    background-color: #b19c52;
+}
+
 .btn.save, .btn.registrate, .btn.login {
     background: #3B3C47;
    
