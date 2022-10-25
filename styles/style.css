@@ -57,7 +57,7 @@ body {
     background-color: #373743;
 }
 
-#catalog .card img {
+#catalog .card .movie-poster {
     border-radius: 30px;
 }
 
@@ -71,7 +71,7 @@ body {
     color: #fff;
 }
 
-#catalog .card-body .card-title {
+#catalog .card-body .movie-title {
     font-weight: 800;
 }
 
@@ -82,7 +82,7 @@ body {
     border-radius: 40px;
 }
 
-#catalog .card-body .year, .country {
+#catalog .card-body .movie-year, #catalog .card-body .movie-country {
     margin: 0;
     color: #898A93;
 }

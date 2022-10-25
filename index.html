@@ -6,6 +6,31 @@
     <link rel="stylesheet" href="/styles/bootstrap.css">
     <link rel="stylesheet" href="/styles/style.css">
 <body>
+    <div class="card my-1 d-none" id="card-template">
+        <div class="row px-2 py-2">
+            <div class="col-md-1">
+                <img class="img-fluid movie-poster" alt="">
+            </div>
+            <div class="col">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h2 class="movie-title"></h2>
+                            <p class="movie-year"></p>
+                            <p class="movie-country">США • фэнтези</p>
+                        </div>
+                        <div class="rating">
+                            <div class="d-flex align-items-center">
+                                <i class="fa-solid fa-star"></i>
+                                <h5 class="score-value"></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="d-flex justify-content-between flex-wrap mx-4 w-100">
             <a href="" class="navbar-brand"><span>Movies Catalog</span></a>
@@ -36,108 +61,9 @@
         </div>
     </nav>
     
-    <div class="container my-3">
-        <div id="catalog">
-            <div class="card my-1">
-                <div class="row px-2 py-2">
-                    <div class="col-md-1">
-                        <img src="1920x.webp" class="img-fluid" alt="">
-                    </div>
-                    <div class="col">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <h2 class="card-title">Бэтмен</h2>
-                                    <p class="year">2022</p>
-                                    <p class="country">США • фэнтези</p>
-                                </div>
-                                <div class="rating">
-                                    <div class="d-flex align-items-center">
-                                        <i class="fa-solid fa-star"></i>
-                                        <h5 class="score-value">7.3</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <main class="container my-3">
+        <div id="catalog"></div>
 
-            <div class="card my-1">
-                <div class="row px-2 py-2">
-                    <div class="col-md-1">
-                        <img src="1921x.webp" class="img-fluid" alt="">
-                    </div>
-                    <div class="col">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <h2 class="card-title">Дом дракона</h2>
-                                    <p class="year">2022</p>
-                                    <p class="country">США • триллер</p>
-                                </div>
-                                <div class="rating">
-                                    <div class="d-flex align-items-center">
-                                        <i class="fa-solid fa-star"></i>
-                                        <h5 class="score-value">9.0</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card my-1">
-                <div class="row px-2 py-2">
-                    <div class="col-md-1">
-                        <img src="1922x.webp" class="img-fluid" alt="">
-                    </div>
-                    <div class="col">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <h2 class="card-title">Джокер</h2>
-                                    <p class="year">2019</p>
-                                    <p class="country">США, Канада • драма</p>
-                                </div>
-                                <div class="rating">
-                                    <div class="d-flex align-items-center">
-                                        <i class="fa-solid fa-star"></i>
-                                        <h5 class="score-value">8.6</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card my-1">
-                <div class="row px-2 py-2">
-                    <div class="col-md-1">
-                        <img src="1923x.webp" class="img-fluid" alt="">
-                    </div>
-                    <div class="col">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <h2 class="card-title">Дневник баскетболиста</h2>
-                                    <p class="year">1995</p>
-                                    <p class="country">США • драма</p>
-                                </div>
-                                <div class="rating">
-                                    <div class="d-flex align-items-center">
-                                        <i class="fa-solid fa-star"></i>
-                                        <h5 class="score-value">8.6</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <nav class="my-5">
             <ul class="pagination justify-content-start align-items-center">
               <li class="page-item direction-item">
@@ -151,9 +77,11 @@
               </li>
             </ul>
         </nav>
-    </div>
+    </main>
 
     <script src="https://kit.fontawesome.com/a3ceedbc1a.js" crossorigin="anonymous"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="js/catalog.js"></script>
 </body>
 </html>
