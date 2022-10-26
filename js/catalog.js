@@ -5,12 +5,12 @@ $(document).ready(function() {
 });
 
 function loadMovies(page) {
-    $("#catalog").empty();
     fetch(server + "/" + page.toString())
     .then((response) => {
         return response.json();
     })
     .then((json) => {
+        $("#catalog").empty();
         let template = $("#card-template");
         for (movie of json.movies) {
             let movieCard = template.clone();
