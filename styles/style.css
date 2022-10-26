@@ -82,9 +82,18 @@ body {
     border-radius: 40px;
 }
 
-#catalog .card-body .movie-year, #catalog .card-body .movie-country {
+#catalog .card-body .movie-year, 
+#catalog .card-body .movie-country, 
+#catalog .card-body .country-genres-divider,
+#catalog .card-body .movie-genres {
     margin: 0;
     color: #898A93;
+}
+
+#catalog .card-body .movie-country, 
+#catalog .card-body .country-genres-divider,
+#catalog .card-body .movie-genres {
+    display: inline;
 }
 
 #catalog .card-body .fa-star {
@@ -99,6 +108,7 @@ body {
     #catalog .card .col-md-1 {
         width: 140px;
         height: 170px;
+        position: relative;
     }
 }
 

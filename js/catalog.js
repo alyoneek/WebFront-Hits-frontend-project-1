@@ -1,7 +1,7 @@
 const server = "https://react-midterm.kreosoft.space/api/movies"
 
 $(document).ready(function() {
-    loadMovies(1);
+    loadMovies(2);
 });
 
 function loadMovies(page) {
@@ -21,6 +21,11 @@ function loadMovies(page) {
             movieCard.find(".movie-poster").attr("src", movie.poster);
             movieCard.find(".movie-year").text(movie.year);
             movieCard.find(".score-value").text(calculateAverageRating(movie.reviews) === 0 ? "-" : calculateAverageRating(movie.reviews));
+            if (movie.country.length && movie.genres.length) {
+                movieCard.find(".country-genres-divider").removeClass("d-none");
+            }
+            movieCard.find(".movie-country").text(movie.country);
+            movieCard.find(".movie-genres").text(genrateStringGenres(movie.genres));
 
             $("#catalog").append(movieCard);
         }
@@ -28,9 +33,13 @@ function loadMovies(page) {
 }
 
 function calculateAverageRating(reviews) {
-    return reviews.length === 0 ? 0 : normalizeScore(reviews.reduce((result, review) => (result + review.rating), 0) / reviews.length);
+    return reviews.length === 0 ? 0 : normalizeScore(reviews.reduce((result, reviewObject) => (result + reviewObject.rating), 0) / reviews.length);
 }
 
 function normalizeScore(score) {
     return Math.round(score * 10) / 10;
+}
+
+function genrateStringGenres(genres) {
+    return genres.reduce((genresArray, genreObject) => [...genresArray, genreObject.name], []).join(", ");
 }
