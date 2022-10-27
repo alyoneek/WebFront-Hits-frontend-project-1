@@ -51,7 +51,7 @@ function addReviews(reviews) {
         }
 
         reviewBlock.find(".score-value").text(review.rating);
-        reviewBlock.find(".date-value").text(review.createDateTime);
+        reviewBlock.find(".date-value").text(new Date(review.createDateTime).toLocaleDateString());
         reviewBlock.find(".comment-text").text(review.reviewText);
         reviewBlock.addClass(review.rating > 5 ? "green" : "red");
 
