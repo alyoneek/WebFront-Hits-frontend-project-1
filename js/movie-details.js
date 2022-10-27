@@ -1,8 +1,7 @@
 server = "https://react-midterm.kreosoft.space/api/movies/details"
 
 $(document).ready(function() {
-    loadMovieInfo("7eae1e59-d6c5-4316-a2af-08d9b9f3d2a2");
-    console.log(1)
+    loadMovieInfo("b6c5228b-91fb-43a1-a2ac-08d9b9f3d2a2");
 });
 
 function loadMovieInfo(id) {
@@ -11,24 +10,52 @@ function loadMovieInfo(id) {
         return response.json();   
     })
     .then((json) => {
-        let movieInfoContainer = $("#movie-info");
-        let averageRating = json.reviews.length ? calculateAverageRating(json.reviews) : 0;
-
-        movieInfoContainer.find(".movie-title").text(json.name);
-        movieInfoContainer.find(".movie-average-rating").text(averageRating === 0 ? "-" : averageRating);
-        movieInfoContainer.find(".movie-average-rating").addClass(averageRating <= 5 && averageRating > 0 ? "red" : "green");
-        movieInfoContainer.find(".brief-description").text(json.description);
-        movieInfoContainer.find(".movie-poster").attr("src", json.poster);
-        movieInfoContainer.find(".movie-year").text(json.year);
-        movieInfoContainer.find(".movie-country").text(json.country);
-        movieInfoContainer.find(".movie-genres").text(genrateStringGenres(json.genres));
-        movieInfoContainer.find(".movie-time").text(`${json.time} мин`);
-        movieInfoContainer.find(".movie-tagline").text(`"${json.tagline}"`);
-        movieInfoContainer.find(".movie-director").text(json.director);
-        movieInfoContainer.find(".movie-budget").text(`$${json.budget.toLocaleString()}`);
-        movieInfoContainer.find(".movie-fees").text(`$${json.fees.toLocaleString()}`);
-        movieInfoContainer.find(".movie-age-limit").text(`${json.ageLimit}+`);
+        addMovieDetails(json);
+        addReviews(json.reviews);
     });
+}
+
+function addMovieDetails(details) {
+    let movieInfoContainer = $("#movie-info");
+    let averageRating = details.reviews.length ? calculateAverageRating(details.reviews) : 0;
+
+    movieInfoContainer.find(".movie-title").text(details.name);
+    movieInfoContainer.find(".movie-average-rating").text(averageRating ? averageRating : "");
+    movieInfoContainer.find(".movie-average-rating").addClass(averageRating <= 5 ? "red" : "green");
+    movieInfoContainer.find(".brief-description").text(details.description);
+    movieInfoContainer.find(".movie-poster").attr("src", details.poster);
+    movieInfoContainer.find(".movie-year").text(details.year);
+    movieInfoContainer.find(".movie-country").text(details.country);
+    movieInfoContainer.find(".movie-genres").text(genrateStringGenres(details.genres));
+    movieInfoContainer.find(".movie-time").text(`${details.time} мин`);
+    movieInfoContainer.find(".movie-tagline").text(`"${details.tagline}"`);
+    movieInfoContainer.find(".movie-director").text(details.director);
+    movieInfoContainer.find(".movie-budget").text(`$${details.budget.toLocaleString()}`);
+    movieInfoContainer.find(".movie-fees").text(`$${details.fees.toLocaleString()}`);
+    movieInfoContainer.find(".movie-age-limit").text(`${details.ageLimit}+`);
+}
+
+function addReviews(reviews) {
+    let commentsContainer = $("#comments");
+    commentsContainer.empty();
+
+    for (review of reviews) {
+        let reviewBlock = $("#review-template").clone();
+
+        if (!review.isAnonymous) {
+            reviewBlock.find(".user-avatar").removeClass("anonymous");
+            reviewBlock.find(".user-avatar").attr("src", review.author.avatar);
+            reviewBlock.find(".user-name").text(review.author.nickName);
+        }
+
+        reviewBlock.find(".score-value").text(review.rating);
+        reviewBlock.find(".date-value").text(review.createDateTime);
+        reviewBlock.find(".comment-text").text(review.reviewText);
+        reviewBlock.addClass(review.rating > 5 ? "green" : "red");
+
+        reviewBlock.removeClass("d-none");
+        commentsContainer.append(reviewBlock);
+    }
 }
 
 function calculateAverageRating(reviews) {

@@ -10,6 +10,39 @@
     <link rel="stylesheet" href="../styles/movie-details.css">
 </head>
 <body>
+    <div id="review-template" class="card text-white mb-3 py-2 d-none">
+        <div class="card-header px-5">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="user-info d-flex align-items-center">
+                    <div class="user-avatar-container">
+                        <img class="user-avatar anonymous" src="../user-icon.png" alt="">
+                    </div>
+                    <h5 class="user-name mx-3">Анонимный пользователь</h5>
+                </div>
+                <div class="rating-info">
+                    <div class="d-flex align-items-center">
+                        <p class="rating-title">Оценка:</p>
+                        <div class="rating-body ms-2">
+                            <div class="d-flex align-items-center">
+                                <i class="fa-solid fa-star"></i>
+                                <p class="score-value text-white"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <p class="date-title">Дата отзыва:&nbsp&nbsp</p>
+                        <p class="date-value"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-body px-5">
+          <p class="comment-text card-text"></p>
+          <button type="button" class="btn edit">Редактировать</button>
+          <button type="button" class="btn delete ms-1">Удалить</button>
+        </div>
+    </div>
+
     <div class="container my-5 py-5 px-5">
         <div id="movie-info">
             <div class="row text-white">
@@ -105,36 +138,6 @@
             </div>
         </div>
         <div id="comments">
-            <div class="card green text-white mb-3 py-2">
-                <div class="card-header px-5">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="user-info d-flex align-items-center">
-                            <img src="../hyunjin1.jpg" alt="">
-                            <h5 class="mx-3">Hwang Hyun-jin</h5>
-                        </div>
-                        <div class="rating-info">
-                            <div class="d-flex align-items-center">
-                                <p class="rating-title">Оценка:</p>
-                                <div class="rating-body ms-2">
-                                    <div class="d-flex align-items-center">
-                                        <i class="fa-solid fa-star"></i>
-                                        <p class="score-value text-white">8</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex">
-                                <p class="date-title">Дата отзыва:&nbsp&nbsp</p>
-                                <p class="date-value">25.10.2022</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body px-5">
-                  <p class="card-text">Замечательный фильм. 1000/10. Всё нравится<br>Лучший на свете</p>
-                  <button type="button" class="btn edit">Редактировать</button>
-                  <button type="button" class="btn delete ms-1">Удалить</button>
-                </div>
-            </div>
         </div>
     </div>
     <script src="../js/bootstrap.bundle.min.js"></script>
