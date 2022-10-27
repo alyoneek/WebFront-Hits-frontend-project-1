@@ -1,7 +1,7 @@
 server = "https://react-midterm.kreosoft.space/api/movies/details"
 
 $(document).ready(function() {
-    loadMovieInfo("b6c5228b-91fb-43a1-a2ac-08d9b9f3d2a2");
+    loadMovieInfo("22158c42-001a-40a3-a2a7-08d9b9f3d2a2");
 });
 
 function loadMovieInfo(id) {
@@ -43,8 +43,10 @@ function addReviews(reviews) {
         let reviewBlock = $("#review-template").clone();
 
         if (!review.isAnonymous) {
-            reviewBlock.find(".user-avatar").removeClass("anonymous");
-            reviewBlock.find(".user-avatar").attr("src", review.author.avatar);
+            if (review.author.avatar) {
+                reviewBlock.find(".user-avatar").removeClass("anonymous");
+                reviewBlock.find(".user-avatar").attr("src", review.author.avatar);
+            }
             reviewBlock.find(".user-name").text(review.author.nickName);
         }
 
