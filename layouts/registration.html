@@ -11,50 +11,51 @@
 </head>
 <body>
     <div class="container text-white my-5 py-5 px-5">
-        <form action="" method="POST">
+        <form id="signup-form" action="" method="POST">
             <div class="mb-3">
-                <label for="inputLogin" class="form-label">Логин</label>
-                <input type="text" class="form-control" id="inputLogin" required>
+                <label for="login" class="form-label">Логин</label>
+                <input type="text" class="form-control" name="login" id="login">
             </div>
-            <div class="row">
+            <div class="row mb-3">
                 <div class="col">
-                    <div class="mb-3">
-                        <label for="inputPassword" class="form-label">Пароль</label>
-                        <input type="password" class="form-control" id="inputPassword" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="inputEmail" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="inputEmail" required>
-                    </div>
-                    <div class="mb-4">
-                        <label for="inputBDate" class="form-label">Дата рождения</label>
-                        <input type="date" class="form-control" id="inputBDate" required>
-                    </div>
+                    <label for="password" class="form-label">Пароль</label>
+                    <input type="password" class="form-control" name="password" id="password">
                 </div>
                 <div class="col">
-                    <div class="mb-3">
-                        <label for="inputPasswordAgain" class="form-label">Подтверждение пароля</label>
-                        <input type="password" class="form-control" id="inputPasswordAgain" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="inputName" class="form-label">ФИО</label>
-                        <input type="text" class="form-control" id="inputName" required>
-                    </div>
-                    <div class="mb-4">
-                        <label for="selectSex" class="form-label">Пол</label>
-                        <select class="form-select">
-                            <option value="woman" selected>Женский</option>
-                            <option value="man">Мужской</option>
-                        </select>
-                    </div>
+                    <label for="confirm_password" class="form-label">Подтверждение пароля</label>
+                    <input type="password" class="form-control" name="confirm_password" id="confirm_password">
                 </div>
             </div>
-            <button type="submit" class="registrate btn text-white py-3">Зарегистрироваться</button>
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" name="email" id="email">
+                </div>
+                <div class="col">
+                    <label for="name" class="form-label">ФИО</label>
+                    <input type="text" class="form-control" name="name" id="name">
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col">
+                    <label for="bdate" class="form-label">Дата рождения</label>
+                    <input type="date" class="form-control" name="bdate" id="bdate">
+                </div>
+                <div class="col">
+                    <label for="sex" class="form-label">Пол</label>
+                    <select id="sex" class="form-select">
+                        <option value="woman" name="sex" selected>Женский</option>
+                        <option value="man" name="sex">Мужской</option>
+                    </select>
+                </div>
+            </div>  
+            <button id="signup-submit" type="submit" class="registrate btn text-white py-3">Зарегистрироваться</button>
         </form>
     </div>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/a3ceedbc1a.js" crossorigin="anonymous"></script>
     <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/jquery.validate.min.js"></script>
     <script src="../js/registration.js"></script>
 </body>
 </html>

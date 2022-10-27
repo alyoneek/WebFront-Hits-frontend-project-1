@@ -104,3 +104,7 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
     background: url(../calendar-white.png) no-repeat;
     background-position: right 0.3rem center;
 }
+
+.error {
+    color: #892C2F;
+}
