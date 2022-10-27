@@ -76,6 +76,7 @@ p {
 
 .movie-poster {
     border-radius: 40px;
+    width: 100%;
 }
 
 .form-control:focus, .form-select:focus {
