@@ -22,12 +22,12 @@ function loadMovieInfo(id) {
         movieInfoContainer.find(".movie-year").text(json.year);
         movieInfoContainer.find(".movie-country").text(json.country);
         movieInfoContainer.find(".movie-genres").text(genrateStringGenres(json.genres));
-        movieInfoContainer.find(".movie-time").text(json.time);
-        movieInfoContainer.find(".movie-tagline").text(json.tagline);
+        movieInfoContainer.find(".movie-time").text(`${json.time} мин`);
+        movieInfoContainer.find(".movie-tagline").text(`"${json.tagline}"`);
         movieInfoContainer.find(".movie-director").text(json.director);
-        movieInfoContainer.find(".movie-budget").text(json.budget);
-        movieInfoContainer.find(".movie-fees").text(json.fees);
-        movieInfoContainer.find(".movie-age-limit").text(json.ageLimit);
+        movieInfoContainer.find(".movie-budget").text(`$${json.budget.toLocaleString()}`);
+        movieInfoContainer.find(".movie-fees").text(`$${json.fees.toLocaleString()}`);
+        movieInfoContainer.find(".movie-age-limit").text(`${json.ageLimit}+`);
     });
 }
 
