@@ -11,10 +11,10 @@
 </head>
 <body>
     <div class="container text-white my-5 py-5 px-5">
-        <form id="signup-form" action="" method="POST">
+        <form id="signup-form">
             <div class="mb-3">
-                <label for="login" class="form-label">Логин</label>
-                <input type="text" class="form-control" name="login" id="login">
+                <label for="userName" class="form-label">Логин</label>
+                <input type="text" class="form-control" name="userName" id="userName">
             </div>
             <div class="row mb-3">
                 <div class="col">
@@ -38,14 +38,14 @@
             </div>
             <div class="row mb-4">
                 <div class="col">
-                    <label for="bdate" class="form-label">Дата рождения</label>
-                    <input type="date" class="form-control" name="bdate" id="bdate">
+                    <label for="birthDate" class="form-label">Дата рождения</label>
+                    <input type="date" class="form-control" name="birthDate" id="birthDate">
                 </div>
                 <div class="col">
-                    <label for="sex" class="form-label">Пол</label>
-                    <select id="sex" class="form-select">
-                        <option value="woman" name="sex" selected>Женский</option>
-                        <option value="man" name="sex">Мужской</option>
+                    <label for="gender" class="form-label">Пол</label>
+                    <select id="gender" class="form-select">
+                        <option value="0" name="gender" selected>Женский</option>
+                        <option value="1" name="gender">Мужской</option>
                     </select>
                 </div>
             </div>  
@@ -56,6 +56,7 @@
     <script src="https://kit.fontawesome.com/a3ceedbc1a.js" crossorigin="anonymous"></script>
     <script src="../js/jquery-3.6.1.min.js"></script>
     <script src="../js/jquery.validate.min.js"></script>
+    <script src="../js/validation.js"></script>
     <script src="../js/registration.js"></script>
 </body>
 </html>
