@@ -1,9 +1,21 @@
 $(document).ready(function () {
+    $("#login-form").validate({
+        rules: {
+            username: "required",
+            password: "required",
+        },
+        messages: {
+            username: "Введите логин",
+            password: "Введите пароль",
+        }
+    });
+
     $("#login-form").submit(function (event) {
         event.preventDefault();
 
         let objectData = getObjectData();
         if (objectData) {
+            console.log(objectData)
             fetch("https://react-midterm.kreosoft.space/api/account/login", {
                 method: "POST",
                 headers: {
@@ -32,7 +44,9 @@ function getObjectData() {
         if ($(input).hasClass("error")) {
             return null;
         }
-        objectData.$(input).attr("id") =  $(input).val();
+        let key = $(input).attr("id");
+        let value = $(input).val()
+        objectData[key] = value;
     }
     return objectData;
 }
