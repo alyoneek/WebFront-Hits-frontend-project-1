@@ -12,11 +12,13 @@ $(document).ready(function () {
                 body: JSON.stringify(objectData)
             })
             .then(response => {
-                if (!response.ok) throw Error(response.statusText);
-                return response.json();
+                if(!response.ok) {
+                    return response.json().then(text => { throw new Error(text.message) })
+                }
+                return response.json(); 
             })
             .then(data => console.log(data))
-            .catch(error => console.log(error));       
+            .catch(error => console.log(error))     
         }
     });
 });
@@ -40,7 +42,6 @@ function getObjectData() {
     if (formData) {
         let objectData = Object.fromEntries(formData);
         objectData.gender = parseInt($("#gender").val());
-        console.log(objectData);
 
         return objectData;
     }
