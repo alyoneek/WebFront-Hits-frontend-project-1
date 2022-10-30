@@ -41,7 +41,6 @@ p {
 
 .btn.save, .btn.registrate, .btn.login {
     background: #3B3C47;
-   
     border: 1px solid #514444;
 }
 
@@ -70,6 +69,15 @@ select:-webkit-autofill:focus {
 
 input {
     -webkit-text-fill-color: #fff;
+}
+
+input:read-only, .form-select:disabled {
+    cursor: default;
+}
+
+.form-select:disabled, .form-select:disabled:hover {
+    background-color: #22242F;
+    background-image: none;
 }
 
 .form-control, .form-select {

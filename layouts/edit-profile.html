@@ -18,36 +18,40 @@
                 </div>
             </div>
             <div class="col-md-8">
-                <h1 class="mb-4">Hwang Hyun-Jin</h1>
-                <div class="mb-3">
-                    <label for="inputEmail" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="inputEmail" required>
-                </div>
-                <div class="mb-3">
-                    <label for="inputAvatar" class="form-label">Ссылка на аватар</label>
-                    <input type="text" class="form-control" id="inputAvatar">
-                </div>
-                <div class="mb-3">
-                    <label for="inputName" class="form-label">ФИО</label>
-                    <input type="text" class="form-control" id="inputName" required>
-                </div>
-                <div class="mb-3">
-                    <label for="inputBDate" class="form-label">Дата рождения</label>
-                    <input type="date" class="form-control" id="inputBDate" required>
-                </div>
-                <div class="mb-4">
-                    <label for="selectSex" class="form-label">Пол</label>
-                    <select id="selectSex" class="form-select">
-                        <option selected>Не выбрано</option>
-                        <option value="woman">Женский</option>
-                        <option value="man">Мужской</option>
-                    </select>
-                </div>
-                <button type="submit" class="edit btn py-3">Редактировать</button>
+                <form id="profile-details">
+                    <div class="mb-3">
+                        <h1 class="nickName mb-4">sss</h1>
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" name="email" id="email" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="avatarLink" class="form-label">Ссылка на аватар</label>
+                        <input type="text" class="form-control" name="avatarLink" id="avatarLink" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">ФИО</label>
+                        <input type="text" class="form-control" name="name" id="name" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="birthDate" class="form-label">Дата рождения</label>
+                        <input type="date" class="form-control" name="birthDate" id="birthDate" readonly>
+                    </div>
+                    <div class="mb-4">
+                        <label for="gender" class="form-label">Пол</label>
+                        <select id="gender" class="form-select" disabled>
+                            <option value="0" selected>Женский</option>
+                            <option value="1">Мужской</option>
+                        </select>
+                    </div>
+                    <button type="" class="edit btn py-3">Редактировать</button>
+                </form>
             </div>
         </div>
     </div>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/a3ceedbc1a.js" crossorigin="anonymous"></script>
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/jquery.validate.min.js"></script>
+    <script src="../js/edit-profile.js"></script>
 </body>
 </html>
