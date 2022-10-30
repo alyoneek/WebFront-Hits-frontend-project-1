@@ -127,9 +127,11 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
     background: #22242F;
     border: 1px solid #65656F;
     border-radius: 40px;
+    width: 100%;
 }
 
 .profile-photo img {
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
     border-radius: 40px;
 }

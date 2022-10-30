@@ -9,6 +9,7 @@ $(document).ready(function() {
         return response.json();
     })
     .then(data => {
+        //$("#user-avatar").attr("src", data.avatarLink);
         let profileDetails = $("#profile-details");
         profileDetails.find(".nickName").text(data.nickName);
         profileDetails.find("#email").val(data.email);
