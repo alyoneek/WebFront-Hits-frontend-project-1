@@ -66,11 +66,8 @@ p {
     background-color: #bb4e52;
 }
 
-.btn.add-to-favorites.active .fa-bookmark {
-    color: #fff;
-}
-
-.btn.add-to-favorites:hover .fa-bookmark {
+.btn.add-to-favorites:hover .fa-bookmark,
+.btn.add-to-favorites.added .fa-bookmark {
     color: #fff;
 }
 

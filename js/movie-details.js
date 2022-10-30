@@ -1,7 +1,12 @@
 server = "https://react-midterm.kreosoft.space/api/movies/details"
 
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImUiLCJlbWFpbCI6Imppbm5pQGV4YW1wbGUuY29tIiwibmJmIjoxNjY3MTIwNjU1LCJleHAiOjE2NjcxMjQyNTUsImlhdCI6MTY2NzEyMDY1NSwiaXNzIjoiaHR0cHM6Ly9yZWFjdC1taWR0ZXJtLmtyZW9zb2Z0LnNwYWNlLyIsImF1ZCI6Imh0dHBzOi8vcmVhY3QtbWlkdGVybS5rcmVvc29mdC5zcGFjZS8ifQ.itXN34O9OCQEBnsUsIjGFo0Cc1rLyq_MgudBBKkJYSw";
+const movieId = "22158c42-001a-40a3-a2a7-08d9b9f3d2a2";
+
 $(document).ready(function() {
-    loadMovieInfo("22158c42-001a-40a3-a2a7-08d9b9f3d2a2");
+    $("#addToFavoritesBtn").click(changeFavoritesMovies);
+    addToFavoritesButton();
+    loadMovieInfo(movieId);
 });
 
 function loadMovieInfo(id) {
@@ -13,6 +18,71 @@ function loadMovieInfo(id) {
         addMovieDetails(json);
         addReviews(json.reviews);
     });
+}
+
+function addToFavoritesButton() {
+    fetch("https://react-midterm.kreosoft.space/api/favorites", {
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            $("#addToFavoritesBtn").addClass("d-none");
+            throw Error(response.statusText);
+        } else {
+            $("#addToFavoritesBtn").removeClass("d-none");
+            return response.json();
+        }
+    })
+    .then(data => {
+        let addToFavoritesBtn = $("#addToFavoritesBtn");
+        if (isMovieAdded(movieId, data.movies)) {
+            addToFavoritesBtn.addClass("added");
+        } else {
+            addToFavoritesBtn.removeClass("added");
+        }
+    })
+    .catch(error => console.log(error));
+}
+
+function changeFavoritesMovies() {
+    if ($(this).hasClass("added")) {
+        console.log(1)
+        fetch(`https://react-midterm.kreosoft.space/api/favorites/${movieId}/delete`, {
+            method: "DELETE",
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        })
+        .then(response => {
+            if (!response.ok) throw Error(response.statusText);
+            addToFavoritesButton()
+        })
+        .catch(error => console.log(error));
+    } else {
+        console.log(2)
+        fetch(`https://react-midterm.kreosoft.space/api/favorites/${movieId}/add`, {
+            method: "POST",
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        })
+        .then(response => {
+            if (!response.ok) throw Error(response.statusText);
+            addToFavoritesButton()
+        })
+        .catch(error => console.log(error));
+    }
+}
+
+function isMovieAdded(movieId, movies) {
+    for (let movie of movies) {
+        if (movie.id === movieId) {
+            return true;
+        }
+    }
+    return false;
 }
 
 function addMovieDetails(details) {
