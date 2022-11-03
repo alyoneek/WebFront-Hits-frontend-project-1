@@ -111,7 +111,6 @@ function addReviewField(movieInfo) {
 
 function changeFavoritesMovies() {
     if ($(this).hasClass("added")) {
-        console.log(1)
         fetch(`${server}/favorites/${movieId}/delete`, {
             method: "DELETE",
             headers: {
@@ -124,7 +123,6 @@ function changeFavoritesMovies() {
         })
         .catch(error => console.log(error));
     } else {
-        console.log(2)
         fetch(`${server}/favorites/${movieId}/add`, {
             method: "POST",
             headers: {
@@ -245,7 +243,6 @@ function registerChangeReviewEvent() {
         $("#adding-review").find("#isAnonymous").prop("checked", review.data("anonymous"));
         $("#adding-review").find("#isAnonymous").attr("disabled", true);
         $("#adding-review").find(".btn.save").attr("data-reviewid", reviewId);
-        console.log(1)
     });
 }
 
