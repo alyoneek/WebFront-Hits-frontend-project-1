@@ -38,7 +38,7 @@
         </div>
         <div class="card-body px-5">
             <p class="comment-text card-text mb-0"></p>
-            <div class="comment-management d-none">
+            <div class="comment-management mt-3 d-none">
                 <button type="button" class="btn edit">Редактировать</button>
                 <button type="button" class="btn delete ms-1">Удалить</button>
             </div>
@@ -57,7 +57,7 @@
                         <h2 class="movie-average-rating"></h5>
                     </div>
                     <p class="brief-description my-3"></p>
-                    <button type="button" class="add-to-favorites btn my-3">Добавить в избранное&nbsp&nbsp<i class="fa-solid fa-bookmark"></i></button>
+                    <button type="button" id="addToFavoritesBtn" class="add-to-favorites btn my-3 d-none">Добавить в избранное&nbsp&nbsp<i class="fa-solid fa-bookmark"></i></button>
                     <h2 class="my-3">О фильме</h2>
                     <div class="common-info">
                         <div class="single-info d-flex justify-content-between">
@@ -101,44 +101,43 @@
             </div>
         </div>
         <h2 class="my-3">Отзывы и оценки</h2>
-        <div id ="adding-review">
+        <form id ="adding-review" class="add-review d-none">
             <div class="card gray text-white mb-3 py-2">
                 <div class="card-header px-5">
-                    <h5 class="mb-1">Добавить отзыв</h5>
+                    <h5 class="add-review__header mb-1">Добавить отзыв</h5>
+                    <h5 class="edit-review__header mb-1">Редактировать отзыв</h5>
                 </div>
                 <div class="card-body px-5">
-                    <div class="form" action="" method="POST">
-                        <div class="mb-3">
-                            <label for="inputReviewText" class="review-title form-label">Текст отзыва</label>
-                            <textarea id="inputReviewText" class="review-body form-control text-white py-3 px-4"></textarea>
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label for="rateSelect" class="rate-title form-label">Текст отзыва</label>
-                            <select id="rateSelect" class="rate-body form-select text-white py-3 px-4">
-                                <option value="10" selected>10</option>
-                                <option value="9">9</option>
-                                <option value="8">8</option>
-                                <option value="7">7</option>
-                                <option value="6">6</option>
-                                <option value="5">5</option>
-                                <option value="4">4</option>
-                                <option value="3">3</option>
-                                <option value="2">2</option>
-                                <option value="1">1</option>
-                            </select>
-                        </div>
-                        
-                        <div class="mb-3">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">Оставить отзыв анонимно</label>
-                        </div>
-
-                        <input type="button" value="Сохранить" class="save btn btn-secondary text-white py-3">
+                    <div class="mb-3">
+                        <label for="reviewText" class="review-title form-label">Текст отзыва</label>
+                        <textarea id="reviewText" name="reviewText" class="review-body form-control text-white py-3 px-4"></textarea>
                     </div>
+                    
+                    <div class="mb-3">
+                        <label for="rating" class="rate-title form-label">Текст отзыва</label>
+                        <select id="rating" name="rating" class="rate-body form-select text-white py-3 px-4">
+                            <option value="10" selected>10</option>
+                            <option value="9">9</option>
+                            <option value="8">8</option>
+                            <option value="7">7</option>
+                            <option value="6">6</option>
+                            <option value="5">5</option>
+                            <option value="4">4</option>
+                            <option value="3">3</option>
+                            <option value="2">2</option>
+                            <option value="1">1</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <input class="form-check-input" type="checkbox" name="isAnonymous" id="isAnonymous">
+                        <label class="form-check-label" for="flexCheckDefault">Оставить отзыв анонимно</label>
+                    </div>
+
+                    <button type="submit" class="save btn btn-secondary text-white py-3">Сохранить</button>
                 </div>
             </div>
-        </div>
+        </form>
         <div id="comments">
         </div>
     </div>

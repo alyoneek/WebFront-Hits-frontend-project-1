@@ -66,11 +66,8 @@ p {
     background-color: #bb4e52;
 }
 
-.btn.add-to-favorites.active .fa-bookmark {
-    color: #fff;
-}
-
-.btn.add-to-favorites:hover .fa-bookmark {
+.btn.add-to-favorites:hover .fa-bookmark,
+.btn.add-to-favorites.added .fa-bookmark {
     color: #fff;
 }
 
@@ -102,6 +99,16 @@ p {
 #comments .card, #adding-review .card {
     background-color: #22242F;
     border-radius: 40px;
+}
+
+#adding-review.add-review .edit-review__header,
+#adding-review.edit-review .add-review__header {
+    display: none;
+}
+
+#adding-review .add-review .add-review__header,
+#adding-review .edit-review .edit-review__header {
+    display: block;
 }
 
 #adding-review .card.gray {
