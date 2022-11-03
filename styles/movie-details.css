@@ -101,6 +101,16 @@ p {
     border-radius: 40px;
 }
 
+#adding-review.add-review .edit-review__header,
+#adding-review.edit-review .add-review__header {
+    display: none;
+}
+
+#adding-review .add-review .add-review__header,
+#adding-review .edit-review .edit-review__header {
+    display: block;
+}
+
 #adding-review .card.gray {
     border: 2px solid #65656F;
 }

@@ -1,18 +1,18 @@
 server = "https://react-midterm.kreosoft.space/api"
 
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImUiLCJlbWFpbCI6Imppbm5pQGV4YW1wbGUuY29tIiwibmJmIjoxNjY3NDcwNzk3LCJleHAiOjE2Njc0NzQzOTcsImlhdCI6MTY2NzQ3MDc5NywiaXNzIjoiaHR0cHM6Ly9yZWFjdC1taWR0ZXJtLmtyZW9zb2Z0LnNwYWNlLyIsImF1ZCI6Imh0dHBzOi8vcmVhY3QtbWlkdGVybS5rcmVvc29mdC5zcGFjZS8ifQ.HvLohc81MLfaMPvSc3XNvc-Sk7DYCrneRH0w8qqzMgI";
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImUiLCJlbWFpbCI6Imppbm5pQGV4YW1wbGUuY29tIiwibmJmIjoxNjY3NDc4ODUyLCJleHAiOjE2Njc0ODI0NTIsImlhdCI6MTY2NzQ3ODg1MiwiaXNzIjoiaHR0cHM6Ly9yZWFjdC1taWR0ZXJtLmtyZW9zb2Z0LnNwYWNlLyIsImF1ZCI6Imh0dHBzOi8vcmVhY3QtbWlkdGVybS5rcmVvc29mdC5zcGFjZS8ifQ.1GW-s4hx5ZNjLnw0O4gO1JMgDxrS_qgl_KRVMzrWG60";
 const movieId = "22158c42-001a-40a3-a2a7-08d9b9f3d2a2";
 
 
 $(document).ready(function() {
     $("#addToFavoritesBtn").click(changeFavoritesMovies); //вынести
-    $("#addingReviewForm").submit(function(e) {
+    $("#adding-review").submit(function(e) {
         e.preventDefault();
 
-        let objectData = getObjectData();
-
-        fetch(`${server}/movie/${movieId}/review/add`, {
-            method: "POST",
+        let objectData = getObjectData(); 
+        console.log($(this).find(".btn.save").data("reviewid"))
+        fetch(`${server}/movie/${movieId}/review/${$(this).hasClass("add-review") ? "add" : `${$(this).find(".btn.save").data("reviewid")}/edit`}`, {
+            method: $(this).hasClass("add-review") ? "POST" : "PUT",
             headers: {
                 "Content-Type": "application/json",
                 'Authorization': `Bearer ${token}`
@@ -84,6 +84,16 @@ function addReviewField(movieInfo) {
         }
     })
     .then(response => {
+        $("#adding-review").removeClass("edit-review");
+        $("#adding-review").addClass("add-review");
+        $("#adding-review").find(".btn.save").removeAttr("data-reviewid");
+        $("#adding-review").find(".btn.save").removeData("reviewid");
+
+        $("#adding-review").find("#reviewText").val("");
+        $("#adding-review").find("#rating").val("10");
+        $("#adding-review").find("#isAnonymous").prop("checked", false);
+        $("#adding-review").find("#isAnonymous").removeAttr("disabled");
+
         if (!response.ok) {
             $("#adding-review").addClass("d-none");
             addReviews(movieInfo.reviews);
@@ -192,6 +202,7 @@ function addReview(container, review, isUser) {
         reviewBlock.find(".user-name").text(review.author.nickName);
     }
 
+    reviewBlock.attr("data-anonymous", review.isAnonymous);
     reviewBlock.find(".comment-management").attr("data-id", review.id);
     reviewBlock.find(".comment-management").removeClass(isUser ? "d-none" : "");
     reviewBlock.find(".score-value").text(review.rating);
@@ -221,8 +232,20 @@ function registerChangeReviewEvent() {
     });
 
     $(".btn.edit").click(function() {
-        $(this).closest(".card").addClass("d-none");
-        
+        let reviewId = $($(this).parent()).data("id");
+        let review = $(this).closest(".card");
+        review.addClass("d-none");
+
+        $("#adding-review").removeClass("add-review");
+        $("#adding-review").addClass("edit-review");
+        $("#adding-review").removeClass("d-none");
+
+        $("#adding-review").find("#reviewText").val(review.find(".comment-text").text());
+        $("#adding-review").find("#rating").val(review.find(".score-value").text());
+        $("#adding-review").find("#isAnonymous").prop("checked", review.data("anonymous"));
+        $("#adding-review").find("#isAnonymous").attr("disabled", true);
+        $("#adding-review").find(".btn.save").attr("data-reviewid", reviewId);
+        console.log(1)
     });
 }
 

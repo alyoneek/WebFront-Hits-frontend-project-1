@@ -101,44 +101,43 @@
             </div>
         </div>
         <h2 class="my-3">Отзывы и оценки</h2>
-        <div id ="adding-review" class="d-none">
+        <form id ="adding-review" class="add-review d-none">
             <div class="card gray text-white mb-3 py-2">
                 <div class="card-header px-5">
-                    <h5 class="mb-1">Добавить отзыв</h5>
+                    <h5 class="add-review__header mb-1">Добавить отзыв</h5>
+                    <h5 class="edit-review__header mb-1">Редактировать отзыв</h5>
                 </div>
                 <div class="card-body px-5">
-                    <form id="addingReviewForm">
-                        <div class="mb-3">
-                            <label for="reviewText" class="review-title form-label">Текст отзыва</label>
-                            <textarea id="reviewText" name="reviewText" class="review-body form-control text-white py-3 px-4"></textarea>
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label for="rating" class="rate-title form-label">Текст отзыва</label>
-                            <select id="rating" name="rating" class="rate-body form-select text-white py-3 px-4">
-                                <option value="10" selected>10</option>
-                                <option value="9">9</option>
-                                <option value="8">8</option>
-                                <option value="7">7</option>
-                                <option value="6">6</option>
-                                <option value="5">5</option>
-                                <option value="4">4</option>
-                                <option value="3">3</option>
-                                <option value="2">2</option>
-                                <option value="1">1</option>
-                            </select>
-                        </div>
-                        
-                        <div class="mb-3">
-                            <input class="form-check-input" type="checkbox" name="isAnonymous" id="isAnonymous">
-                            <label class="form-check-label" for="flexCheckDefault">Оставить отзыв анонимно</label>
-                        </div>
+                    <div class="mb-3">
+                        <label for="reviewText" class="review-title form-label">Текст отзыва</label>
+                        <textarea id="reviewText" name="reviewText" class="review-body form-control text-white py-3 px-4"></textarea>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="rating" class="rate-title form-label">Текст отзыва</label>
+                        <select id="rating" name="rating" class="rate-body form-select text-white py-3 px-4">
+                            <option value="10" selected>10</option>
+                            <option value="9">9</option>
+                            <option value="8">8</option>
+                            <option value="7">7</option>
+                            <option value="6">6</option>
+                            <option value="5">5</option>
+                            <option value="4">4</option>
+                            <option value="3">3</option>
+                            <option value="2">2</option>
+                            <option value="1">1</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <input class="form-check-input" type="checkbox" name="isAnonymous" id="isAnonymous">
+                        <label class="form-check-label" for="flexCheckDefault">Оставить отзыв анонимно</label>
+                    </div>
 
-                        <button type="submit" class="save btn btn-secondary text-white py-3">Сохранить</button>
-                    </form>
+                    <button type="submit" class="save btn btn-secondary text-white py-3">Сохранить</button>
                 </div>
             </div>
-        </div>
+        </form>
         <div id="comments">
         </div>
     </div>
