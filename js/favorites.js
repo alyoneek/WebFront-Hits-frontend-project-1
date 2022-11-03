@@ -16,6 +16,7 @@ function loadFavoritesMovies() {
         return response.json();
     })
     .then((json) => {
+        console.log(json)
         $("#favorites-list").empty();
         let template = $("#favorite-movie-template");
         for (movie of json.movies) {
@@ -28,11 +29,11 @@ function loadFavoritesMovies() {
             movieCard.find(".movie-poster").attr("src", movie.poster);
             movieCard.find(".movie-year").text(movie.year);
             movieCard.find(".score-value").text(calculateAverageRating(movie.reviews) === 0 ? "-" : calculateAverageRating(movie.reviews));
-            // if (movie.country.length && movie.genres.length) {
-            //     movieCard.find(".country-genres-divider").removeClass("d-none");
-            // }
-            // movieCard.find(".movie-country").text(movie.country);
-            // movieCard.find(".movie-genres").text(genrateStringGenres(movie.genres));
+            if (movie.country.length && movie.genres.length) {
+                movieCard.find(".country-genres-divider").removeClass("d-none");
+            }
+            movieCard.find(".movie-country").text(movie.country);
+            movieCard.find(".movie-genres").text(genrateStringGenres(movie.genres));
 
             $("#favorites-list").append(movieCard);
         }
