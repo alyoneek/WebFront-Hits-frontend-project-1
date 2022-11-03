@@ -48,7 +48,6 @@ function addToFavoritesButton() {
 
 function changeFavoritesMovies() {
     if ($(this).hasClass("added")) {
-        console.log(1)
         fetch(`https://react-midterm.kreosoft.space/api/favorites/${movieId}/delete`, {
             method: "DELETE",
             headers: {
@@ -61,7 +60,6 @@ function changeFavoritesMovies() {
         })
         .catch(error => console.log(error));
     } else {
-        console.log(2)
         fetch(`https://react-midterm.kreosoft.space/api/favorites/${movieId}/add`, {
             method: "POST",
             headers: {
