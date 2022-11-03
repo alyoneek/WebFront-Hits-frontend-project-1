@@ -1,4 +1,4 @@
-server = "https://react-midterm.kreosoft.space/api/movies/details"
+server = "https://react-midterm.kreosoft.space/api"
 
 $(document).ready(function() {
     loadMovieInfo("22158c42-001a-40a3-a2a7-08d9b9f3d2a2");
