@@ -16,15 +16,15 @@ function loadFavoritesMovies() {
         return response.json();
     })
     .then((json) => {
-        console.log(json)
         $("#favorites-list").empty();
         let template = $("#favorite-movie-template");
+
         for (movie of json.movies) {
             let movieCard = template.clone();
 
             movieCard.removeAttr("id");
             movieCard.removeClass("d-none")
-            movieCard.data("id", movie.id);
+            movieCard.find(".btn.delete").data("id", movie.id);
             movieCard.find(".movie-title").text(movie.name);
             movieCard.find(".movie-poster").attr("src", movie.poster);
             movieCard.find(".movie-year").text(movie.year);
@@ -37,8 +37,25 @@ function loadFavoritesMovies() {
 
             $("#favorites-list").append(movieCard);
         }
+        registerDeleteEvent();
     })
     .catch(error => console.log(error));
+}
+
+function registerDeleteEvent() {
+    $(".btn.delete").click(function() {
+         fetch(`${server}/${$(this).data("id")}/delete`, {
+            method: "DELETE",
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        })
+        .then((response) => {
+            if (!response.ok) throw Error(response.statusText);
+            loadFavoritesMovies();
+        })
+        .catch((error) => console.log(error));
+    });
 }
 
 function calculateAverageRating(reviews) {
