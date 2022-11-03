@@ -31,7 +31,7 @@
     display: inline-block;
 }
 
-.card.movie .card-body .year, .country {
+.card.movie .card-body .movie-year, .country {
     margin: 0;
     color: #898A93;
 }
