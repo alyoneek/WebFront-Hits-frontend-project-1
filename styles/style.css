@@ -17,7 +17,7 @@ body {
 
 h1, h2, h5, h6 {
     color: #fff;
-    font-weight: 700;
+    font-weight: 600;
     margin: 0;
 }
 
@@ -226,4 +226,3 @@ p {
     color: #F13E45;
     font-size: 1.7em;
 }
-
