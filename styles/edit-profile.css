@@ -41,7 +41,6 @@ p {
 
 .btn.save, .btn.registrate, .btn.login {
     background: #3B3C47;
-   
     border: 1px solid #514444;
 }
 
@@ -52,6 +51,10 @@ p {
 .form-label {
     font-weight: 700;
     font-size: 1.1rem;
+}
+
+.error {
+    color: #892C2F;
 }
 
 input:-webkit-autofill,
@@ -70,6 +73,15 @@ select:-webkit-autofill:focus {
 
 input {
     -webkit-text-fill-color: #fff;
+}
+
+input:read-only, .form-select:disabled {
+    cursor: default;
+}
+
+.form-select:disabled, .form-select:disabled:hover {
+    background-color: #22242F;
+    background-image: none;
 }
 
 .form-control, .form-select {
@@ -119,9 +131,11 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
     background: #22242F;
     border: 1px solid #65656F;
     border-radius: 40px;
+    width: 100%;
 }
 
 .profile-photo img {
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
     border-radius: 40px;
 }
