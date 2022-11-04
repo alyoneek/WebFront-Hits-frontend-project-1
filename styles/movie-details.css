@@ -66,16 +66,14 @@ p {
     background-color: #bb4e52;
 }
 
-.btn.add-to-favorites.active .fa-bookmark {
-    color: #fff;
-}
-
-.btn.add-to-favorites:hover .fa-bookmark {
+.btn.add-to-favorites:hover .fa-bookmark,
+.btn.add-to-favorites.added .fa-bookmark {
     color: #fff;
 }
 
 .movie-poster {
     border-radius: 40px;
+    width: 100%;
 }
 
 .form-control:focus, .form-select:focus {
@@ -101,6 +99,16 @@ p {
 #comments .card, #adding-review .card {
     background-color: #22242F;
     border-radius: 40px;
+}
+
+#adding-review.add-review .edit-review__header,
+#adding-review.edit-review .add-review__header {
+    display: none;
+}
+
+#adding-review .add-review .add-review__header,
+#adding-review .edit-review .edit-review__header {
+    display: block;
 }
 
 #adding-review .card.gray {
@@ -168,10 +176,27 @@ p {
     color: #892C2F;
 }
 
-#comments .card .user-info img {
+#comments .card .user-avatar-container {
     width: 60px;
     height: 60px;
     border-radius: 50%;
+    border: 1px solid #65656F;
+    position: relative;
+}
+
+#comments .card .user-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+#comments .card .user-avatar.anonymous {
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 #comments .card .rating-info p {

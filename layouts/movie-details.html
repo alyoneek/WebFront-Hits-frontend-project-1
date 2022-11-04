@@ -10,193 +10,140 @@
     <link rel="stylesheet" href="../styles/movie-details.css">
 </head>
 <body>
+    <div id="review-template" class="card text-white mb-3 py-2 d-none">
+        <div class="card-header px-5">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="user-info d-flex align-items-center">
+                    <div class="user-avatar-container">
+                        <img class="user-avatar anonymous" src="../user-icon.png" alt="Фото профиля">
+                    </div>
+                    <h5 class="user-name mx-3">Анонимный пользователь</h5>
+                </div>
+                <div class="rating-info">
+                    <div class="d-flex align-items-center">
+                        <p class="rating-title">Оценка:</p>
+                        <div class="rating-body ms-2">
+                            <div class="d-flex align-items-center">
+                                <i class="fa-solid fa-star"></i>
+                                <p class="score-value text-white"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <p class="date-title">Дата отзыва:&nbsp&nbsp</p>
+                        <p class="date-value"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-body px-5">
+            <p class="comment-text card-text mb-0"></p>
+            <div class="comment-management mt-3 d-none">
+                <button type="button" class="btn edit">Редактировать</button>
+                <button type="button" class="btn delete ms-1">Удалить</button>
+            </div>
+        </div>
+    </div>
+
     <div class="container my-5 py-5 px-5">
         <div id="movie-info">
             <div class="row text-white">
-                <div class="col">
-                    <img class="movie-poster" src="../1922x.webp" alt="Постер фильма">
+                <div class="col-lg-5">
+                    <img class="movie-poster" alt="Постер фильма">
                 </div>
                 <div class="col">
                     <div class="d-flex justify-content-between">
-                        <h1 class="movie-title">Джокер(2019)</h1>
-                        <h2 class="movie-average-rating green">8.0</h5>
+                        <h1 class="movie-title"></h1>
+                        <h2 class="movie-average-rating"></h5>
                     </div>
-                    <p class="brief-description my-3">Готэм, начало 1980-х годов. Комик Артур Флек живет с больной матерью, которая с детства учит его «ходить с улыбкой». Пытаясь нести в мир хорошее и дарить людям радость, Артур сталкивается с человеческой жестокостью и постепенно приходит к выводу, что этот мир получит от него не добрую улыбку, а ухмылку злодея Джокера.</p>
-                    <button type="button" class="add-to-favorites btn my-3">Добавить в избранное&nbsp&nbsp<i class="fa-solid fa-bookmark"></i></button>
+                    <p class="brief-description my-3"></p>
+                    <button type="button" id="addToFavoritesBtn" class="add-to-favorites btn my-3 d-none">Добавить в избранное&nbsp&nbsp<i class="fa-solid fa-bookmark"></i></button>
                     <h2 class="my-3">О фильме</h2>
                     <div class="common-info">
                         <div class="single-info d-flex justify-content-between">
                             <p class="single-info__title">Год производства:</p>
-                            <p>2019</p>
+                            <p class="movie-year"></p>
                         </div>
                         <div class="single-info d-flex justify-content-between">
                             <p class="single-info__title">Страна:</p>
-                            <p>США, Канада</p>
+                            <p class="movie-country"></p>
                         </div>
                         <div class="single-info d-flex justify-content-between">
                             <p class="single-info__title">Жанр:</p>
-                            <p>драма, криминал, триллер</p>
+                            <p class="movie-genres"></p>
                         </div>
                         <div class="single-info d-flex justify-content-between">
                             <p class="single-info__title">Время:</p>
-                            <p>122 мин.</p>
+                            <p class="movie-time"></p>
                         </div>
                         <div class="single-info d-flex justify-content-between">
                             <p class="single-info__title">Слоган:</p>
-                            <p>«Сделай счастливое лицо»</p>
+                            <p class="movie-tagline"></p>
                         </div>
                         <div class="single-info single-info d-flex justify-content-between">
                             <p class="single-info__title">Режиссёр:</p>
-                            <p>Тодд Филлипс</p>
+                            <p class="movie-director"></p>
                         </div>
                         <div class="single-info d-flex justify-content-between">
                             <p class="single-info__title">Бюджет:</p>
-                            <p>$55 000 000</p>
+                            <p class="movie-budget"></p>
                         </div>
                         <div class="single-info d-flex justify-content-between">
                             <p class="single-info__title">Сборы в мире:</p>
-                            <p>$1 074 251 311</p>
+                            <p class="movie-fees"></p>
                         </div>
                         <div class="single-info d-flex justify-content-between">
                             <p class="single-info__title">Возраст:</p>
-                            <p>18+</p>
+                            <p class="movie-age-limit"></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <h2 class="my-3">Отзывы и оценки</h2>
-        <div id ="adding-review">
+        <form id ="adding-review" class="add-review d-none">
             <div class="card gray text-white mb-3 py-2">
                 <div class="card-header px-5">
-                    <h5 class="mb-1">Добавить отзыв</h5>
+                    <h5 class="add-review__header mb-1">Добавить отзыв</h5>
+                    <h5 class="edit-review__header mb-1">Редактировать отзыв</h5>
                 </div>
                 <div class="card-body px-5">
-                    <div class="form" action="" method="POST">
-                        <div class="mb-3">
-                            <label for="inputReviewText" class="review-title form-label">Текст отзыва</label>
-                            <textarea id="inputReviewText" class="review-body form-control text-white py-3 px-4"></textarea>
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label for="rateSelect" class="rate-title form-label">Текст отзыва</label>
-                            <select id="rateSelect" class="rate-body form-select text-white py-3 px-4">
-                                <option value="10" selected>10</option>
-                                <option value="9">9</option>
-                                <option value="8">8</option>
-                                <option value="7">7</option>
-                                <option value="6">6</option>
-                                <option value="5">5</option>
-                                <option value="4">4</option>
-                                <option value="3">3</option>
-                                <option value="2">2</option>
-                                <option value="1">1</option>
-                            </select>
-                        </div>
-                        
-                        <div class="mb-3">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">Оставить отзыв анонимно</label>
-                        </div>
-
-                        <input type="button" value="Сохранить" class="save btn btn-secondary text-white py-3">
+                    <div class="mb-3">
+                        <label for="reviewText" class="review-title form-label">Текст отзыва</label>
+                        <textarea id="reviewText" name="reviewText" class="review-body form-control text-white py-3 px-4"></textarea>
                     </div>
+                    
+                    <div class="mb-3">
+                        <label for="rating" class="rate-title form-label">Текст отзыва</label>
+                        <select id="rating" name="rating" class="rate-body form-select text-white py-3 px-4">
+                            <option value="10" selected>10</option>
+                            <option value="9">9</option>
+                            <option value="8">8</option>
+                            <option value="7">7</option>
+                            <option value="6">6</option>
+                            <option value="5">5</option>
+                            <option value="4">4</option>
+                            <option value="3">3</option>
+                            <option value="2">2</option>
+                            <option value="1">1</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <input class="form-check-input" type="checkbox" name="isAnonymous" id="isAnonymous">
+                        <label class="form-check-label" for="flexCheckDefault">Оставить отзыв анонимно</label>
+                    </div>
+
+                    <button type="submit" class="save btn btn-secondary text-white py-3">Сохранить</button>
                 </div>
             </div>
-        </div>
+        </form>
         <div id="comments">
-            <div class="card green text-white mb-3 py-2">
-                <div class="card-header px-5">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="user-info d-flex align-items-center">
-                            <img src="../hyunjin1.jpg" alt="">
-                            <h5 class="mx-3">Hwang Hyun-jin</h5>
-                        </div>
-                        <div class="rating-info">
-                            <div class="d-flex align-items-center">
-                                <p class="rating-title">Оценка:</p>
-                                <div class="rating-body ms-2">
-                                    <div class="d-flex align-items-center">
-                                        <i class="fa-solid fa-star"></i>
-                                        <p class="score-value text-white">8</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex">
-                                <p class="date-title">Дата отзыва:&nbsp&nbsp</p>
-                                <p class="date-value">25.10.2022</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body px-5">
-                  <p class="card-text">Замечательный фильм. 1000/10. Всё нравится<br>Лучший на свете</p>
-                  <button type="button" class="btn edit">Редактировать</button>
-                  <button type="button" class="btn delete ms-1">Удалить</button>
-                </div>
-            </div>
-
-            <div class="card green text-white mb-3 py-2">
-                <div class="card-header px-5">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="user-info d-flex align-items-center">
-                            <img src="../hyunjin1.jpg" alt="">
-                            <h5 class="mx-3">Hwang Hyun-jin</h5>
-                        </div>
-                        <div class="rating-info">
-                            <div class="d-flex align-items-center">
-                                <p class="rating-title">Оценка:</p>
-                                <div class="rating-body ms-2">
-                                    <div class="d-flex align-items-center">
-                                        <i class="fa-solid fa-star"></i>
-                                        <p class="score-value text-white">7</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex">
-                                <p class="date-title">Дата отзыва:&nbsp&nbsp</p>
-                                <p class="date-value">25.10.2022</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body px-5">
-                  <p class="card-text">Замечательный фильм. 1000/10. Всё нравится</p>
-                </div>
-            </div>
-
-            <div class="card red text-white mb-3 py-2">
-                <div class="card-header px-5">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="user-info d-flex align-items-center">
-                            <img src="../hyunjin1.jpg" alt="">
-                            <h5 class="mx-3">Hwang Hyun-jin</h5>
-                        </div>
-                        <div class="rating-info">
-                            <div class="d-flex align-items-center">
-                                <p class="rating-title">Оценка:</p>
-                                <div class="rating-body ms-2">
-                                    <div class="d-flex align-items-center">
-                                        <i class="fa-solid fa-star"></i>
-                                        <p class="score-value text-white">4</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex">
-                                <p class="date-title">Дата отзыва:&nbsp&nbsp</p>
-                                <p class="date-value">25.10.2022</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body px-5">
-                  <p class="card-text">Готэм, начало 1980-х годов. Комик Артур Флек живет с больной матерью, которая с детства учит его «ходить с улыбкой». Пытаясь нести в мир хорошее и дарить людям радость, Артур сталкивается с человеческой жестокостью и постепенно приходит к выводу, что этот мир получит от него не добрую улыбку, а ухмылку злодея Джокера.</p>
-                </div>
-            </div>
         </div>
     </div>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/a3ceedbc1a.js" crossorigin="anonymous"></script>
     <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/movie-details.js"></script>
 </body>
 </html>
