@@ -53,6 +53,10 @@ p {
     font-size: 1.1rem;
 }
 
+.error {
+    color: #892C2F;
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus,
