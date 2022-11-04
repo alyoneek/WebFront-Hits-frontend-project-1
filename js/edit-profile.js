@@ -66,7 +66,7 @@ $(document).ready(function() {
                     location.reload();
                 }
             })
-            .catch(error => console.log(error))     
+            .catch(error => console.log(error));     
         }
     })
 

@@ -1,11 +1,13 @@
-const server = "https://react-midterm.kreosoft.space/api/movies"
+const server = "https://react-midterm.kreosoft.space/api";
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImUiLCJlbWFpbCI6Imppbm5pQGV4YW1wbGUuY29tIiwibmJmIjoxNjY3NTcyMTc0LCJleHAiOjE2Njc1NzU3NzQsImlhdCI6MTY2NzU3MjE3NCwiaXNzIjoiaHR0cHM6Ly9yZWFjdC1taWR0ZXJtLmtyZW9zb2Z0LnNwYWNlLyIsImF1ZCI6Imh0dHBzOi8vcmVhY3QtbWlkdGVybS5rcmVvc29mdC5zcGFjZS8ifQ.x4z25gwLK1mvVF_bFiy9NVQFSItW3JhsinWHdsXc3f4";
 
 $(document).ready(function() {
     loadMovies(2);
+    loadNavbar();
 });
 
 function loadMovies(page) {
-    fetch(server + "/" + page.toString())
+    fetch(`${server}/movies/${page.toString()}`)
     .then((response) => {
         return response.json();
     })
@@ -29,6 +31,30 @@ function loadMovies(page) {
 
             $("#catalog").append(movieCard);
         }
+    });
+}
+
+function loadNavbar() {
+    $("#navbar").find("#user-name").text("");
+
+    fetch(`${server}/account/profile`, {
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
+    })
+    .then((response) => {
+        if(!response.ok) throw Error(response.statusText)
+        return response.json();
+    })
+    .then((json) => {
+        $("#navbar").find("#user-name").text(json.nickName);
+        $("#navbar").removeClass("unauthorized");
+        $("#navbar").addClass("authorized");
+    })
+    .catch(error => {
+        console.log(error);
+        $("#navbar").removeClass("authorized");
+        $("#navbar").addClass("unauthorized");
     });
 }
 

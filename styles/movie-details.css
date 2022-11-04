@@ -29,47 +29,8 @@ p {
     transition: ease 0.4s;
 }
 
-.btn i {
-    color:#22242F;
-}
 
-.btn:hover, :not(.btn-check)+.btn:active {
-    color: #22242F;
-}
 
-.btn, .fa-bookmark {
-    transition: ease 0.4s;
-}
-
-.btn.edit {
-    background-color: #AE8D16;
-}
-
-.btn.edit:hover {
-    background-color: #b19c52;
-}
-
-.btn.save {
-    background: #3B3C47;
-    border: 1px solid #514444;
-}
-
-.btn.save:hover {
-    background: #5d5e68;
-}
-
-.btn.add-to-favorites, .btn.delete {
-    background-color: #B93338;
-}
-
-.btn.add-to-favorites:hover, .btn.delete:hover {
-    background-color: #bb4e52;
-}
-
-.btn.add-to-favorites:hover .fa-bookmark,
-.btn.add-to-favorites.added .fa-bookmark {
-    color: #fff;
-}
 
 .movie-poster {
     border-radius: 40px;

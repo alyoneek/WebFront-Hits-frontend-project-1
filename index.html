@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles/bootstrap.min.css">
 </head>
 <body>
-    <div class="card my-1 d-none" id="card-template">
+    <div class="movie card my-1 d-none" id="card-template">
         <div class="row px-2 py-2">
             <div class="col-md-1">
                 <img class="img-fluid movie-poster" alt="Постер фильма">
@@ -15,7 +15,7 @@
             <div class="col">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
-                        <div>
+                        <div class="details">
                             <h2 class="movie-title"></h2>
                             <p class="movie-year"></p>
                             <p class="movie-country"></p>
@@ -34,7 +34,7 @@
         </div>
     </div>
 
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav id="navbar" class="unauthorized navbar navbar-expand-lg navbar-dark">
         <div class="d-flex justify-content-between flex-wrap mx-4 w-100">
             <a href="" class="navbar-brand"><span>Movies Catalog</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
@@ -46,18 +46,24 @@
                         <a href="" class="nav-link active">Фильмы</a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">Избранное</a>
+                        <a href="" class="link-for-authorized nav-link">Избранное</a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">Мой профиль</a>
+                        <a href="" class="link-for-authorized nav-link">Мой профиль</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a href="" class="nav-link active">Авторизован как ExampleName</a>
+                        <a href="" class="link-for-authorized nav-link active">Авторизован как - <span id="user-name"></span></a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">Выйти</a>
+                        <a href="" class="link-for-authorized nav-link">Выйти</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="link-for-unauthorized nav-link">Вход</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="link-for-unauthorized nav-link">Регистрация</a>
                     </li>
                 </ul>
             </div>
@@ -69,15 +75,15 @@
 
         <nav class="my-5">
             <ul class="pagination justify-content-start align-items-center">
-              <li class="page-item direction-item">
-                <a class="page-link" href="#" tabindex="-1" aria-disabled="true"><i class="fa-solid fa-angle-left"></i></a>
-              </li>
-              <li class="page-item num-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item num-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item num-item"><a class="page-link" href="#">12</a></li>
-              <li class="page-item direction-item">
-                <a class="page-link" href="#"><i class="fa-solid fa-angle-right"></i></a>
-              </li>
+                <li class="page-item direction-item">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true"><i class="fa-solid fa-angle-left"></i></a>
+                </li>
+                <li class="page-item num-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item num-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item num-item"><a class="page-link" href="#">12</a></li>
+                <li class="page-item direction-item">
+                    <a class="page-link" href="#"><i class="fa-solid fa-angle-right"></i></a>
+                </li>
             </ul>
         </nav>
     </main>
