@@ -1,4 +1,4 @@
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImUiLCJlbWFpbCI6IjFAZXhhbXBsZS5jb20iLCJuYmYiOjE2NjcxMDcxMDQsImV4cCI6MTY2NzExMDcwNCwiaWF0IjoxNjY3MTA3MTA0LCJpc3MiOiJodHRwczovL3JlYWN0LW1pZHRlcm0ua3Jlb3NvZnQuc3BhY2UvIiwiYXVkIjoiaHR0cHM6Ly9yZWFjdC1taWR0ZXJtLmtyZW9zb2Z0LnNwYWNlLyJ9.IH-uVzVRjq6BtbEsbmXN5s3OTLz_x876OcGEgsFCW1Y";
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Ikh5dW4tamluIiwiZW1haWwiOiJkcmFtYV9xdWVlbkBnbWFpbC5jb20iLCJuYmYiOjE2Njc1ODEwODYsImV4cCI6MTY2NzU4NDY4NiwiaWF0IjoxNjY3NTgxMDg2LCJpc3MiOiJodHRwczovL3JlYWN0LW1pZHRlcm0ua3Jlb3NvZnQuc3BhY2UvIiwiYXVkIjoiaHR0cHM6Ly9yZWFjdC1taWR0ZXJtLmtyZW9zb2Z0LnNwYWNlLyJ9.Gh4NqAA67ZQZlzwK-9vitYpN6uvkRZl4Jp0P8ds9XDc";
 $(document).ready(function() {
     fetch("https://react-midterm.kreosoft.space/api/account/profile", {
         headers: {
@@ -10,7 +10,10 @@ $(document).ready(function() {
         return response.json();
     })
     .then(data => {
-        $("#user-avatar").attr("src", data.avatarLink);
+        if (data.avatarLink) {
+            $("#user-avatar").attr("src", data.avatarLink);
+        }
+        
         let profileDetails = $("#profile-details");
         profileDetails.find(".nickName").text(data.nickName);
         profileDetails.find("#email").val(data.email);

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,13 +39,13 @@
         <div class="card-body px-5">
             <p class="comment-text card-text mb-0"></p>
             <div class="comment-management mt-3 d-none">
-                <button type="button" class="btn edit">Редактировать</button>
-                <button type="button" class="btn delete ms-1">Удалить</button>
+                <button type="button" class="yellow btn edit">Редактировать</button>
+                <button type="button" class="red btn delete ms-1">Удалить</button>
             </div>
         </div>
     </div>
 
-    <div class="container my-5 py-5 px-5">
+    <main class="container dark my-5 py-5 px-5">
         <div id="movie-info">
             <div class="row text-white">
                 <div class="col-lg-5">
@@ -57,7 +57,7 @@
                         <h2 class="movie-average-rating"></h5>
                     </div>
                     <p class="brief-description my-3"></p>
-                    <button type="button" id="addToFavoritesBtn" class="add-to-favorites btn my-3 d-none">Добавить в избранное&nbsp&nbsp<i class="fa-solid fa-bookmark"></i></button>
+                    <button type="button" id="addToFavoritesBtn" class="red btn my-3 d-none">Добавить в избранное&nbsp&nbsp<i class="fa-solid fa-bookmark"></i></button>
                     <h2 class="my-3">О фильме</h2>
                     <div class="common-info">
                         <div class="single-info d-flex justify-content-between">
@@ -100,6 +100,7 @@
                 </div>
             </div>
         </div>
+
         <h2 class="my-3">Отзывы и оценки</h2>
         <form id ="adding-review" class="add-review d-none">
             <div class="card gray text-white mb-3 py-2">
@@ -134,13 +135,15 @@
                         <label class="form-check-label" for="flexCheckDefault">Оставить отзыв анонимно</label>
                     </div>
 
-                    <button type="submit" class="save btn btn-secondary text-white py-3">Сохранить</button>
+                    <button type="submit" class="gray btn text-white py-3">Сохранить</button>
                 </div>
             </div>
         </form>
+
         <div id="comments">
         </div>
-    </div>
+    </main>
+
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/a3ceedbc1a.js" crossorigin="anonymous"></script>
     <script src="../js/jquery-3.6.1.min.js"></script>

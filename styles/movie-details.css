@@ -1,44 +1,8 @@
-.container {
-    background: radial-gradient(36.55% 53.71% at 75.47% 46.29%, #312837 0%, #22242F 100%);
-    border-radius: 50px;
-}
-
-h1, h2, h5, h6 {
-    color: #fff;
-    font-weight: 700;
-    margin: 0;
-}
-
-p {
-    font-size: 16px;
-    line-height: 1.3em;
-}
-
-.green {
-    color: #558B51
-}
-
-.red {
-    color: #892C2F;
-}
-
-.btn {
-    color: #22242F;
-    font-weight: 500;
-    border-radius: 40px;
-    transition: ease 0.4s;
-}
-
-
 
 
 .movie-poster {
     border-radius: 40px;
     width: 100%;
-}
-
-.form-control:focus, .form-select:focus {
-    box-shadow: none;
 }
 
 #movie-info .brief-description {

@@ -26,12 +26,27 @@ p {
     line-height: 1.3em;
 }
 
+.container {
+    border-radius: 50px;
+}
+
+.container.dark {
+    background: radial-gradient(36.55% 53.71% at 75.47% 46.29%, #312837 0%, #22242F 100%);
+}
+
 .green {
     color: #558B51
 }
 
-.red {
+.red, .error {
     color: #892C2F;
+}
+
+.btn {
+    color: #22242F;
+    font-weight: 500;
+    border-radius: 40px;
+    transition: ease 0.4s;
 }
 
 .btn i {
@@ -46,33 +61,33 @@ p {
     transition: ease 0.4s;
 }
 
-.btn.edit {
+.btn.yellow {
     background-color: #AE8D16;
 }
 
-.btn.edit:hover {
+.btn.yellow:hover {
     background-color: #b19c52;
 }
 
-.btn.save {
+.btn.gray {
     background: #3B3C47;
     border: 1px solid #514444;
 }
 
-.btn.save:hover {
+.btn.gray:hover {
     background: #5d5e68;
 }
 
-.btn.add-to-favorites, .btn.delete {
+.btn.red {
     background-color: #B93338;
 }
 
-.btn.add-to-favorites:hover, .btn.delete:hover {
+.btn.red:hover {
     background-color: #bb4e52;
 }
 
-.btn.add-to-favorites:hover .fa-bookmark,
-.btn.add-to-favorites.added .fa-bookmark {
+#addToFavoritesBtn:hover .fa-bookmark,
+#addToFavoritesBtn.added .fa-bookmark {
     color: #fff;
 }
 
@@ -225,4 +240,81 @@ p {
 .pagination .direction-item .page-link:hover {
     color: #F13E45;
     font-size: 1.7em;
+}
+
+/* Forms */
+
+.form-label {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-box-shadow:0 0 0 50px #22242F inset;
+    -webkit-text-fill-color: rgb(255, 255, 255);
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+input {
+    -webkit-text-fill-color: #fff;
+}
+
+.form-control, .form-select {
+    color: #fff;
+    border: 1px solid #343a40;
+    border-radius: 40px;
+    background-color: #22242F;
+    line-height: 35px;
+}
+
+.form-control:focus, .form-select:focus {
+    box-shadow: none;
+    border: 1px solid #343a40;
+    background-color: #22242F;
+}
+
+.form-select, input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    transition: ease 0.3s;
+}
+
+.form-select {
+    background-image: url(../down-arrow.png);
+    background-position: right 1rem center;
+    background-size: 20px 20px;
+}
+
+.form-select:hover {
+    background-image: url(../down-arrow-white.png);
+    background-position: right 1rem center;
+    background-size: 20px 20px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: url(../calendar.png) #22242F no-repeat;
+    background-position: right 0.3rem center;
+    width: 20px;
+    height: 20px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    background: url(../calendar-white.png) no-repeat;
+    background-position: right 0.3rem center;
+}
+
+input:read-only, .form-select:disabled {
+    cursor: default;
+}
+
+.form-select:disabled, .form-select:disabled:hover {
+    background-color: #22242F;
+    background-image: none;
 }
