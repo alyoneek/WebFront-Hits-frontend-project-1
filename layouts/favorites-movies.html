@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FavoritesMovies</title>
+    <link rel="stylesheet" href="../styles/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/favorites-movies.css">
+</head>
+<body>
+    <div id="favorite-movie-template" class="movie card my-1 d-none">
+        <div class="row px-2 py-2">
+            <div class="col-md-1">
+                <img class="movie-poster img-fluid" alt="">
+            </div>
+            <div class="col">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <div class="mb-2">
+                                <h2 class="movie-title"></h2>
+                                <p class="movie-year"></p>
+                                <p class="movie-country"></p>
+                                <p class="country-genres-divider d-none">&nbsp•&nbsp</p>
+                                <p class="movie-genres"></p>
+                            </div>
+                            <div class="rating">
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-solid fa-star"></i>
+                                    <h5 class="score-value"></h5>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="delete btn text-white py-4">Удалить из избранного</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="favorites-list" class="container my-5">
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/a3ceedbc1a.js" crossorigin="anonymous"></script>
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/favorites.js"></script>
+</body>
+</html>

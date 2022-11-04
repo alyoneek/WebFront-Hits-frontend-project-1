@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,9 +8,181 @@
 
 html{
     min-height: 100%;
+<<<<<<< HEAD
 }
 
 body {
     background: radial-gradient(40.14% 47.79% at 74.17% 59.86%, #372835 0.52%, #282A43 100%) fixed;
     font-family: 'Inter';
+}
+
+/* Navbar */
+
+.navbar {
+    transition: ease 0.7s;
+}
+
+.navbar:hover {
+    background-color: #1d1f2efb;
+}
+
+.navbar .navbar-brand {
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: #D71F26;
+}
+
+.navbar .nav-item .nav-link {
+    color: #8E8C90;
+    transition: ease 0.3s;
+}
+
+.navbar .nav-item .nav-link.active {
+    color: #ffffff;
+}
+
+.navbar .nav-item .nav-link:hover {
+    color: #ffffff;
+}
+
+/* card */
+
+#catalog .card {
+    background-color: #22242F;
+    border: 3px solid #373743;
+    border-radius: 40px;
+    transition: ease 0.6s;
+}
+
+#catalog .card:hover {
+    background-color: #373743;
+}
+
+#catalog .card .movie-poster {
+    border-radius: 30px;
+}
+
+#catalog .card .img-fluid {
+    width: 100%;
+    height: 100%;
+}
+
+#catalog .card-body {
+    padding-left: 0;
+    color: #fff;
+}
+
+#catalog .card-body .movie-title {
+    font-weight: 800;
+}
+
+#catalog .card-body .rating {
+    background-color: #38352D;
+    padding: 3px 10px;
+    border: 1px solid #886F1D;
+    border-radius: 40px;
+}
+
+#catalog .card-body .movie-year, 
+#catalog .card-body .movie-country, 
+#catalog .card-body .country-genres-divider,
+#catalog .card-body .movie-genres {
+    margin: 0;
+    color: #898A93;
+}
+
+#catalog .card-body .movie-country, 
+#catalog .card-body .country-genres-divider,
+#catalog .card-body .movie-genres {
+    display: inline;
+}
+
+#catalog .card-body .fa-star {
+    color: #FFC700;
+}
+
+#catalog .card-body .score-value {
+    margin: 0 0 0 5px;
+}
+
+@media (min-width: 768px) {
+    #catalog .card .col-md-1 {
+        width: 140px;
+        height: 170px;
+        position: relative;
+    }
+}
+
+/* Pagination */
+ 
+.pagination .page-item .page-link {
+    background: #22242F;
+    border: 3px solid #373743;
+    color: #BEBEBE; 
+    font-weight: 600;
+    font-size: 1.1em;
+    text-align: center;
+    margin-right: 3px;
+    transition: ease 0.4s;
+}
+
+.pagination .page-item .page-link:focus {
+    box-shadow: none;
+}
+
+.pagination .num-item .page-link {
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+}
+
+.pagination .num-item .page-link:hover {
+    color: #ffffff; 
+    background: #373743;
+}
+
+.pagination .direction-item .page-link {
+    border-radius: 20px;
+    width: 3.5rem;
+    font-size: 1.5em;
+    line-height: 2rem;
+}
+
+.pagination .direction-item .page-link:hover {
+    color: #F13E45;
+    font-size: 1.7em;
+=======
+}
+
+body {
+    background: radial-gradient(40.14% 47.79% at 74.17% 59.86%, #372835 0.52%, #282A43 100%) fixed;
+    font-family: 'Inter';
+}
+
+h1, h2, h5, h6 {
+    color: #fff;
+    font-weight: 700;
+    margin: 0;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.3em;
+}
+
+
+.btn {
+    color: #22242F;
+    font-weight: 500;
+    border-radius: 40px;
+    transition: ease 0.4s;
+}
+
+.btn.delete {
+    background-color: #B93338;
+}
+
+.btn.delete:hover {
+    background-color: #bb4e52;
+>>>>>>> iss13805
 }
