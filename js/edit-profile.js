@@ -61,35 +61,26 @@ $(document).ready(function() {
                     $(this).find("#birthDate").attr("readonly", "readonly");
                     $(this).find("#gender").attr("disabled", "readonly");
 
-                    $(this).find("#saveBtn").text("Редактировать");
-                    $(this).find("#saveBtn").removeClass("save");
-                    $(this).find("#saveBtn").addClass("edit");
-                    $(this).find("#saveBtn").attr("id", "editBtn");
+                    $("#saveBtn").addClass("d-none");
+                    $("#editBtn").removeClass("d-none");
 
-                    location.reload();
+                    location.reload(); //кринж
                 }
             })
             .catch(error => console.log(error));     
         }
     })
 
-    $("#profile-details").click(function(event) {
-        if (event.target.id == "editBtn") {
-            $(this).find("#email").removeAttr("readonly");
-            $(this).find("#avatarLink").removeAttr("readonly");
-            $(this).find("#name").removeAttr("readonly");
-            $(this).find("#birthDate").removeAttr("readonly");
-            $(this).find("#gender").removeAttr("disabled");
+    $("#editBtn").click(function() {
+        let form = $("#profile-details");
+        form.find("#email").removeAttr("readonly");
+        form.find("#avatarLink").removeAttr("readonly");
+        form.find("#name").removeAttr("readonly");
+        form.find("#birthDate").removeAttr("readonly");
+        form.find("#gender").removeAttr("disabled");
 
-            $(event.target).attr("type", "button");
-
-            $(event.target).text("Сохранить");
-            $(event.target).removeClass("edit");
-            $(event.target).addClass("save");
-            $(event.target).attr("id", "saveBtn");
-        } else if (event.target.id == "saveBtn") {
-            $(event.target).attr("type", "submit");
-        }
+        $(this).addClass("d-none");
+        $("#saveBtn").removeClass("d-none");
     });
 });
 
