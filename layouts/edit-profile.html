@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="../styles/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/edit-profile.css">
+</head>
+<body>
+    <div class="container text-white my-5 py-5 px-5">
+        <div class="row">
+            <div class="col">
+                <div class="profile-photo">
+                    <img id="user-avatar" src="../user-icon.png" alt="">
+                </div>
+            </div>
+            <div class="col-md-8">
+                <form id="profile-details">
+                    <div class="mb-3">
+                        <h1 class="nickName mb-4"></h1>
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" name="email" id="email" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="avatarLink" class="form-label">Ссылка на аватар</label>
+                        <input type="text" class="form-control" name="avatarLink" id="avatarLink" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">ФИО</label>
+                        <input type="text" class="form-control" name="name" id="name" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="birthDate" class="form-label">Дата рождения</label>
+                        <input type="date" class="form-control" name="birthDate" id="birthDate" readonly>
+                    </div>
+                    <div class="mb-4">
+                        <label for="gender" class="form-label">Пол</label>
+                        <select id="gender" class="form-select" disabled>
+                            <option value="0" selected>Женский</option>
+                            <option value="1">Мужской</option>
+                        </select>
+                    </div>
+                    <button id="editBtn" type="button" class="edit btn py-3">Редактировать</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/a3ceedbc1a.js" crossorigin="anonymous"></script>
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/jquery.validate.min.js"></script>
+    <script src="../js/edit-profile.js"></script>
+</body>
+</html>
