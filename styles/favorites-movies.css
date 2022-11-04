@@ -31,9 +31,18 @@
     display: inline-block;
 }
 
-.card.movie .card-body .year, .country {
+.card.movie .card-body .movie-year, 
+.card.movie .card-body .movie-country, 
+.card.movie .card-body .country-genres-divider,
+.card.movie .card-body .movie-genres {
     margin: 0;
     color: #898A93;
+}
+
+.card.movie .card-body .movie-country, 
+.card.movie .card-body .country-genres-divider,
+.card.movie .card-body .movie-genres {
+    display: inline;
 }
 
 .card.movie .card-body .fa-star {
