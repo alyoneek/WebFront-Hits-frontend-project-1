@@ -1,4 +1,7 @@
+$(window).bind("popstate", router);
+
 $(document).ready(function() {
+    console.log(3)
     preventDefaultLinksBehaviour();
     router();
 });
@@ -9,11 +12,11 @@ function navigateTo(url) {
 };
 
 const routes = [
-    { path: "/", view: () => console.log("Movie") },
-    { path: "/login", view: () => console.log("Login") },
-    { path: "/register", view: () => console.log("Register") },
-    { path: "/favorites", view: () => console.log("Favorites") },
-    { path: "/profile", view: () => console.log("Profile") },
+    { path: "/", view: "/public/views/catalog.html" },
+    { path: "/login", view: "/public/views/login.html" },
+    { path: "/register", view: "/public/views/signin.html" },
+    { path: "/favorites", view: "/public/views/catalog.html" },
+    { path: "/profile", view: "/public/views/profile.html" },
 ];
 
 async function router() {
@@ -33,7 +36,10 @@ async function router() {
         }
     }; 
 
-    console.log(match.route.view())
+    // возможно, переделать, как в видео было через классы
+    let view = match.route.view;
+    let html = await fetch(view).then((response) => response.text());
+    $("main").html(html);
 };
 
 function preventDefaultLinksBehaviour() {

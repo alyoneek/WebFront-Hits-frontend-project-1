@@ -39,13 +39,13 @@
         <div class="card-body px-5">
             <p class="comment-text card-text mb-0"></p>
             <div class="comment-management mt-3 d-none">
-                <button type="button" class="yellow btn edit">Редактировать</button>
-                <button type="button" class="red btn delete ms-1">Удалить</button>
+                <button type="button" class="yellow save btn edit">Редактировать</button>
+                <button type="button" class="red delete btn delete ms-1">Удалить</button>
             </div>
         </div>
     </div>
 
-    <main class="container dark my-5 py-5 px-5">
+    <div class="container dark my-5 py-5 px-5">
         <div id="movie-info">
             <div class="row text-white">
                 <div class="col-lg-5">
@@ -135,14 +135,14 @@
                         <label class="form-check-label" for="flexCheckDefault">Оставить отзыв анонимно</label>
                     </div>
 
-                    <button type="submit" class="gray btn text-white py-3">Сохранить</button>
+                    <button id="saveBtn" type="submit" class="gray btn text-white py-3">Сохранить</button>
                 </div>
             </div>
         </form>
 
         <div id="comments">
         </div>
-    </main>
+    </div>
 
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/a3ceedbc1a.js" crossorigin="anonymous"></script>

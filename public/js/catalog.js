@@ -1,9 +1,16 @@
 const server = "https://react-midterm.kreosoft.space/api";
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImUiLCJlbWFpbCI6Imppbm5pQGV4YW1wbGUuY29tIiwibmJmIjoxNjY3NTcyMTc0LCJleHAiOjE2Njc1NzU3NzQsImlhdCI6MTY2NzU3MjE3NCwiaXNzIjoiaHR0cHM6Ly9yZWFjdC1taWR0ZXJtLmtyZW9zb2Z0LnNwYWNlLyIsImF1ZCI6Imh0dHBzOi8vcmVhY3QtbWlkdGVybS5rcmVvc29mdC5zcGFjZS8ifQ.x4z25gwLK1mvVF_bFiy9NVQFSItW3JhsinWHdsXc3f4";
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Ikh5dW4tamluIiwiZW1haWwiOiJkcmFtYV9xdWVlbkBnbWFpbC5jb20iLCJuYmYiOjE2Njc2NDQ1MTEsImV4cCI6MTY2NzY0ODExMSwiaWF0IjoxNjY3NjQ0NTExLCJpc3MiOiJodHRwczovL3JlYWN0LW1pZHRlcm0ua3Jlb3NvZnQuc3BhY2UvIiwiYXVkIjoiaHR0cHM6Ly9yZWFjdC1taWR0ZXJtLmtyZW9zb2Z0LnNwYWNlLyJ9.VJXlYzI9TRBjIEVN2TQHbQ0vAPxoD6CcjzQE9G1FiPo";
 
 $(document).ready(function() {
-    loadMovies(2);
-    loadNavbar();
+    console.log(2)
+    const observer = new MutationObserver(function() {
+        loadNavbar();
+        loadMovies(2);
+    });
+
+    observer.observe($("main")[0], {
+        childList: true
+    })
 });
 
 function loadMovies(page) {

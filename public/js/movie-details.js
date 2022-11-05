@@ -1,6 +1,6 @@
 server = "https://react-midterm.kreosoft.space/api"
 
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImUiLCJlbWFpbCI6Imppbm5pQGV4YW1wbGUuY29tIiwibmJmIjoxNjY3NTc5NzAyLCJleHAiOjE2Njc1ODMzMDIsImlhdCI6MTY2NzU3OTcwMiwiaXNzIjoiaHR0cHM6Ly9yZWFjdC1taWR0ZXJtLmtyZW9zb2Z0LnNwYWNlLyIsImF1ZCI6Imh0dHBzOi8vcmVhY3QtbWlkdGVybS5rcmVvc29mdC5zcGFjZS8ifQ.mjz5LfAufCXzdGVmS0GjH0fVav6d_cC0ZVfSVs6sGrk";
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Ikh5dW4tamluIiwiZW1haWwiOiJkcmFtYV9xdWVlbkBnbWFpbC5jb20iLCJuYmYiOjE2Njc2NDQ1MTEsImV4cCI6MTY2NzY0ODExMSwiaWF0IjoxNjY3NjQ0NTExLCJpc3MiOiJodHRwczovL3JlYWN0LW1pZHRlcm0ua3Jlb3NvZnQuc3BhY2UvIiwiYXVkIjoiaHR0cHM6Ly9yZWFjdC1taWR0ZXJtLmtyZW9zb2Z0LnNwYWNlLyJ9.VJXlYzI9TRBjIEVN2TQHbQ0vAPxoD6CcjzQE9G1FiPo";
 const movieId = "22158c42-001a-40a3-a2a7-08d9b9f3d2a2";
 
 
@@ -10,8 +10,8 @@ $(document).ready(function() {
         e.preventDefault();
 
         let objectData = getObjectData(); 
-        console.log($(this).find(".btn.save").data("reviewid"))
-        fetch(`${server}/movie/${movieId}/review/${$(this).hasClass("add-review") ? "add" : `${$(this).find(".btn.save").data("reviewid")}/edit`}`, {
+
+        fetch(`${server}/movie/${movieId}/review/${$(this).hasClass("add-review") ? "add" : `${$(this).find("#saveBtn").data("reviewid")}/edit`}`, {
             method: $(this).hasClass("add-review") ? "POST" : "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -86,8 +86,8 @@ function addReviewField(movieInfo) {
     .then(response => {
         $("#adding-review").removeClass("edit-review");
         $("#adding-review").addClass("add-review");
-        $("#adding-review").find(".btn.save").removeAttr("data-reviewid");
-        $("#adding-review").find(".btn.save").removeData("reviewid");
+        $("#adding-review").find("#saveBtn").removeAttr("data-reviewid");
+        $("#adding-review").find("#saveBtn").removeData("reviewid");
 
         $("#adding-review").find("#reviewText").val("");
         $("#adding-review").find("#rating").val("10");
@@ -242,7 +242,7 @@ function registerChangeReviewEvent() {
         $("#adding-review").find("#rating").val(review.find(".score-value").text());
         $("#adding-review").find("#isAnonymous").prop("checked", review.data("anonymous"));
         $("#adding-review").find("#isAnonymous").attr("disabled", true);
-        $("#adding-review").find(".btn.save").attr("data-reviewid", reviewId);
+        $("#adding-review").find("#saveBtn").attr("data-reviewid", reviewId);
     });
 }
 
