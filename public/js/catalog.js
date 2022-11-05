@@ -9,6 +9,7 @@ $(document).ready(function() {
 function loadMovies(page) {
     fetch(`${server}/movies/${page.toString()}`)
     .then((response) => {
+        if(!response.ok) throw Error(response.statusText);
         return response.json();
     })
     .then((json) => {
@@ -31,7 +32,8 @@ function loadMovies(page) {
 
             $("#catalog").append(movieCard);
         }
-    });
+    })
+    .catch(error => { console.log(error) });
 }
 
 function loadNavbar() {
@@ -43,7 +45,7 @@ function loadNavbar() {
         }
     })
     .then((response) => {
-        if(!response.ok) throw Error(response.statusText)
+        if(!response.ok) throw Error(response.statusText);
         return response.json();
     })
     .then((json) => {
