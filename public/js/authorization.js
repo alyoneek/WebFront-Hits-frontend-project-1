@@ -15,7 +15,6 @@ $(document).ready(function () {
 
         let objectData = getObjectData();
         if (objectData) {
-            console.log(objectData)
             fetch("https://react-midterm.kreosoft.space/api/account/login", {
                 method: "POST",
                 headers: {
