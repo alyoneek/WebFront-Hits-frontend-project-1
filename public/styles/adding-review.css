@@ -1,0 +1,47 @@
+#adding-review .card {
+    background-color: var(--dirty-gray);
+    border-radius: 40px;
+}
+
+#adding-review.add-review .edit-review__header,
+#adding-review.edit-review .add-review__header {
+    display: none;
+}
+
+#adding-review .add-review .add-review__header,
+#adding-review .edit-review .edit-review__header {
+    display: block;
+}
+
+#adding-review .card.gray {
+    border: 2px solid var(--sand-gray);
+}
+
+#adding-review .card.gray .card-header {
+    border-bottom: 2px solid var(--sand-gray);
+}
+
+#adding-review .form-label {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+#adding-review .review-body, #adding-review .rate-body {
+    border: 1px solid var(--sand-gray);
+    border-radius: 40px;
+    background-color: var(--dark-gray);
+}
+
+#adding-review .review-body {
+    height: 300px;
+}
+
+#adding-review .rate-body {
+    background-position: right 1rem center;
+    background-size: 20px 20px;
+    width: 100px;
+    line-height: 25px;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: start;
+}

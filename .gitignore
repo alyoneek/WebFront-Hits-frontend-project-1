@@ -1,9 +1,4 @@
 .idea
 node_modules
-<<<<<<< HEAD
-package.json
-package-lock.json
-=======
 package-lock.json
 package.json
->>>>>>> iss14997

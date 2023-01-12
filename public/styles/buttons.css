@@ -1,0 +1,48 @@
+.btn {
+    color: var(--dark-gray);
+    font-weight: 500;
+    border-radius: 40px;
+    transition: ease 0.4s;
+}
+
+.btn i {
+    color: var(--dark-gray);
+}
+
+.btn:hover, :not(.btn-check)+.btn:active {
+    color: var(--dark-gray);
+}
+
+.btn, .fa-bookmark {
+    transition: ease 0.4s;
+}
+
+.btn.yellow {
+    background-color: var(--dull-yellow);
+}
+
+.btn.yellow:hover {
+    background-color: var(--light-yellow);
+}
+
+.btn.gray {
+    background: var(--gray);
+    border: 1px solid var(--metalic);
+}
+
+.btn.gray:hover {
+    background: var(--light-gray);
+}
+
+.btn.red {
+    background-color: var(--coral);
+}
+
+.btn.red:hover {
+    background-color: var(--light-coral);
+}
+
+#addToFavoritesBtn:hover .fa-bookmark,
+#addToFavoritesBtn.added .fa-bookmark {
+    color: var(--white);
+}

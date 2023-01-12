@@ -1,0 +1,38 @@
+.pagination .page-item .page-link {
+    background: var(--dark-gray);
+    border: 3px solid var(--deep-gray);
+    color: var(--dirty-white); 
+    font-weight: 600;
+    font-size: 1.1em;
+    text-align: center;
+    margin-right: 3px;
+    transition: ease 0.4s;
+}
+
+.pagination .page-item .page-link:focus {
+    box-shadow: none;
+}
+
+.pagination .num-item .page-link {
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+}
+
+.pagination .num-item .page-link:hover,
+.pagination .num-item .page-link.active {
+    color: var(--white); 
+    background: var(--deep-gray);
+}
+
+.pagination .direction-item .page-link {
+    border-radius: 20px;
+    width: 3.5rem;
+    font-size: 1.5em;
+    line-height: 2rem;
+}
+
+.pagination .direction-item .page-link:hover {
+    color: var(--red);
+    font-size: 1.7em;
+}

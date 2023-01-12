@@ -1,48 +1,48 @@
-<div class="container dark my-5 py-5 px-5">
-    <div id="review-template" class="card text-white mb-3 py-2 d-none">
-        <div class="card-header px-5">
-            <div class="d-flex justify-content-between align-items-center">
-                <div class="user-info d-flex align-items-center">
-                    <div class="user-avatar-container">
-                        <img class="user-avatar anonymous" src="../user-icon.png" alt="Фото профиля">
-                    </div>
-                    <h5 class="user-name mx-3">Анонимный пользователь</h5>
+<div id="review-template" class="card review text-white mb-3 py-2 d-none">
+    <div class="card-header px-5">
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="user-info d-flex align-items-center">
+                <div class="user-avatar-container">
+                    <img class="user-avatar anonymous" src="/public/images/user-icon.png">
                 </div>
-                <div class="rating-info">
-                    <div class="d-flex align-items-center">
-                        <p class="rating-title">Оценка:</p>
-                        <div class="rating-body ms-2">
-                            <div class="d-flex align-items-center">
-                                <i class="fa-solid fa-star"></i>
-                                <p class="score-value text-white"></p>
-                            </div>
+                <h5 class="user-name mx-3">Анонимный пользователь</h5>
+            </div>
+            <div class="rating-info">
+                <div class="d-flex align-items-center">
+                    <p class="rating-title">Оценка:</p>
+                    <div class="rating-body ms-2">
+                        <div class="d-flex align-items-center">
+                            <i class="fa-solid fa-star"></i>
+                            <p class="score-value text-white"></p>
                         </div>
                     </div>
-                    <div class="d-flex">
-                        <p class="date-title">Дата отзыва:&nbsp&nbsp</p>
-                        <p class="date-value"></p>
-                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="card-body px-5">
-            <p class="comment-text card-text mb-0"></p>
-            <div class="comment-management mt-3 d-none">
-                <button type="button" class="yellow btn edit">Редактировать</button>
-                <button type="button" class="red btn delete ms-1">Удалить</button>
+                <div class="d-flex">
+                    <p class="date-title">Дата отзыва:&nbsp&nbsp</p>
+                    <p class="date-value"></p>
+                </div>
             </div>
         </div>
     </div>
-    
+    <div class="card-body px-5">
+        <p class="comment-text card-text mb-0"></p>
+        <div class="comment-management mt-3 d-none">
+            <button type="button" class="yellow save btn edit">Редактировать</button>
+            <button type="button" class="red delete btn delete ms-1">Удалить</button>
+        </div>
+    </div>
+</div>
+
+<div class="container dark my-5 py-5 px-5">
     <div id="movie-info">
         <div class="row text-white">
             <div class="col-lg-5">
-                <img class="movie-poster" alt="Постер фильма">
+                <img class="movie-poster">
             </div>
             <div class="col">
                 <div class="d-flex justify-content-between">
                     <h1 class="movie-title"></h1>
-                    <h2 class="movie-average-rating"></h2>
+                    <h2 class="movie-average-rating"></h5>
                 </div>
                 <p class="brief-description my-3"></p>
                 <button type="button" id="addToFavoritesBtn" class="red btn my-3 d-none">Добавить в избранное&nbsp&nbsp<i class="fa-solid fa-bookmark"></i></button>
@@ -50,46 +50,46 @@
                 <div class="common-info">
                     <div class="single-info d-flex justify-content-between">
                         <p class="single-info__title">Год производства:</p>
-                        <p class="movie-year"></p>
+                        <p class="movie-year text-end"></p>
                     </div>
                     <div class="single-info d-flex justify-content-between">
                         <p class="single-info__title">Страна:</p>
-                        <p class="movie-country"></p>
+                        <p class="movie-country text-end"></p>
                     </div>
                     <div class="single-info d-flex justify-content-between">
                         <p class="single-info__title">Жанр:</p>
-                        <p class="movie-genres"></p>
+                        <p class="movie-genres text-end"></p>
                     </div>
                     <div class="single-info d-flex justify-content-between">
                         <p class="single-info__title">Время:</p>
-                        <p class="movie-time"></p>
+                        <p class="movie-time text-end"></p>
                     </div>
                     <div class="single-info d-flex justify-content-between">
                         <p class="single-info__title">Слоган:</p>
-                        <p class="movie-tagline"></p>
+                        <p class="movie-tagline text-end"></p>
                     </div>
                     <div class="single-info single-info d-flex justify-content-between">
                         <p class="single-info__title">Режиссёр:</p>
-                        <p class="movie-director"></p>
+                        <p class="movie-director text-end"></p>
                     </div>
                     <div class="single-info d-flex justify-content-between">
                         <p class="single-info__title">Бюджет:</p>
-                        <p class="movie-budget"></p>
+                        <p class="movie-budget text-end"></p>
                     </div>
                     <div class="single-info d-flex justify-content-between">
                         <p class="single-info__title">Сборы в мире:</p>
-                        <p class="movie-fees"></p>
+                        <p class="movie-fees text-end"></p>
                     </div>
                     <div class="single-info d-flex justify-content-between">
                         <p class="single-info__title">Возраст:</p>
-                        <p class="movie-age-limit"></p>
+                        <p class="movie-age-limit text-end"></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <h2 class="my-3">Отзывы и оценки</h2>
+    <h2 class="my-4">Отзывы и оценки</h2>
     <form id ="adding-review" class="add-review d-none">
         <div class="card gray text-white mb-3 py-2">
             <div class="card-header px-5">
@@ -120,10 +120,10 @@
                 
                 <div class="mb-3">
                     <input class="form-check-input" type="checkbox" name="isAnonymous" id="isAnonymous">
-                    <label class="form-check-label" for="isAnonymous">Оставить отзыв анонимно</label>
+                    <label class="form-check-label" for="flexCheckDefault">Оставить отзыв анонимно</label>
                 </div>
 
-                <button type="submit" class="gray btn text-white py-3">Сохранить</button>
+                <button id="saveBtn" type="submit" class="gray btn text-white py-3">Сохранить</button>
             </div>
         </div>
     </form>

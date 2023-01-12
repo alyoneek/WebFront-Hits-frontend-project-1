@@ -1,0 +1,37 @@
+#navbar {
+    transition: ease 0.7s;
+}
+
+#navbar:hover {
+    background-color: var(--dark-purple);
+}
+
+#navbar .navbar-brand {
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--red);
+}
+
+#navbar .nav-item .nav-link {
+    cursor: pointer;
+    color: #8E8C90;
+    transition: ease 0.3s;
+}
+
+#navbar .nav-item .nav-link.active {
+    color: var(--white);
+}
+
+#navbar .nav-item .nav-link:hover {
+    color: var(--white);
+}
+
+#navbar.authorized .link-for-authorized,
+#navbar.unauthorized .link-for-unauthorized {
+    display: block;
+}
+
+#navbar.authorized .link-for-unauthorized,
+#navbar.unauthorized .link-for-authorized {
+    display: none;
+}

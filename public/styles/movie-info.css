@@ -1,0 +1,22 @@
+
+.movie-poster {
+    border-radius: 40px;
+    width: 100%;
+}
+
+#movie-info .brief-description {
+    color: var(--light-dirty-white);
+}
+
+#movie-info .single-info {
+    border-bottom: 1px solid var(--dark-dirty-white);
+    color: var(--light-dirty-white);
+}
+
+#movie-info .single-info p {
+    margin: 7px;
+}
+
+#movie-info .single-info__title {
+    color: var(--dark-dirty-white);
+}

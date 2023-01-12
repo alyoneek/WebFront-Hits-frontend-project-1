@@ -1,0 +1,80 @@
+.card.review {
+    background-color: var(--dirty-gray);
+    border-radius: 40px;
+}
+
+.card.review.green {
+    border: 2px solid var(--dark-green);
+}
+
+.card.review.red {
+    border: 2px solid var(--dark-red);
+}
+
+.card.review.green .card-header {
+    border-bottom: 2px solid var(--dark-green);
+}
+
+.card.review.red .rating-body {
+    background: var(--dark-red);
+}
+
+.card.review.green .rating-body {
+    background: var(--dark-green);
+}
+
+.card.review.red .card-header {
+    border-bottom: 2px solid var(--dark-red);
+}
+
+.card.review.green .card-body .card-text {
+    color: var(--light-green);
+}
+
+.card.review.red .card-body .card-text {
+    color: var(--dark-red);
+}
+
+.card.review .user-avatar-container {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid var(--sand-gray);
+    position: relative;
+}
+
+.card.review .user-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.card.review .user-avatar.anonymous {
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.card.review .rating-info p {
+    margin: 0;
+    color: var(--dark-dirty-white);
+}
+
+.card.review .rating-body {
+    background-color: var(--yellow-gray);
+    padding: 3px 10px;
+    border: 1px solid var(--gold);
+    border-radius: 40px;
+}
+
+.card.review .rating-body .fa-star {
+    color: var(--yellow);
+}
+
+.card.review .rating-body .score-value {
+    margin: 0 0 0 5px;
+    font-weight: 500;
+}

@@ -1,4 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
+@import 'constants.css';
+@import 'movie-info.css';
+@import 'adding-review.css';
+@import 'buttons.css';
+@import 'forms.css';
+@import 'movie-card.css';
+@import 'navbar.css';
+@import 'pagination.css';
+@import 'profile.css';
+@import 'review-card.css';
 
 * {
     margin: 0;
@@ -15,306 +25,29 @@ body {
     font-family: 'Inter';
 }
 
-h1, h2, h5, h6 {
-    color: #fff;
-    font-weight: 600;
-    margin: 0;
-}
-
-p {
-    font-size: 16px;
-    line-height: 1.3em;
-}
-
 .container {
     border-radius: 50px;
 }
 
 .container.dark {
-    background: radial-gradient(36.55% 53.71% at 75.47% 46.29%, #312837 0%, #22242F 100%);
+    background: radial-gradient(36.55% 53.71% at 75.47% 46.29%, #312837 0%, var(--dark-gray) 100%);
 }
 
-.green {
-    color: #558B51
-}
-
-.red, .error {
-    color: #892C2F;
-}
-
-.btn {
-    color: #22242F;
-    font-weight: 500;
-    border-radius: 40px;
-    transition: ease 0.4s;
-}
-
-.btn i {
-    color:#22242F;
-}
-
-.btn:hover, :not(.btn-check)+.btn:active {
-    color: #22242F;
-}
-
-.btn, .fa-bookmark {
-    transition: ease 0.4s;
-}
-
-.btn.yellow {
-    background-color: #AE8D16;
-}
-
-.btn.yellow:hover {
-    background-color: #b19c52;
-}
-
-.btn.gray {
-    background: #3B3C47;
-    border: 1px solid #514444;
-}
-
-.btn.gray:hover {
-    background: #5d5e68;
-}
-
-.btn.red {
-    background-color: #B93338;
-}
-
-.btn.red:hover {
-    background-color: #bb4e52;
-}
-
-#addToFavoritesBtn:hover .fa-bookmark,
-#addToFavoritesBtn.added .fa-bookmark {
-    color: #fff;
-}
-
-/* Navbar */
-
-#navbar {
-    transition: ease 0.7s;
-}
-
-#navbar:hover {
-    background-color: #1d1f2efb;
-}
-
-#navbar .navbar-brand {
+h1, h2, h5, h6 {
+    color: var(--white);
     font-weight: 600;
-    letter-spacing: 0.08em;
-    color: #D71F26;
-}
-
-#navbar .nav-item .nav-link {
-    color: #8E8C90;
-    transition: ease 0.3s;
-}
-
-#navbar .nav-item .nav-link.active {
-    color: #ffffff;
-}
-
-#navbar .nav-item .nav-link:hover {
-    color: #ffffff;
-}
-
-#navbar.authorized .link-for-authorized,
-#navbar.unauthorized .link-for-unauthorized {
-    display: block;
-}
-
-#navbar.authorized .link-for-unauthorized,
-#navbar.unauthorized .link-for-authorized {
-    display: none;
-}
-
-/* card */
-
-.card.movie {
-    background-color: #22242F;
-    border: 3px solid #373743;
-    border-radius: 40px;
-    transition: ease 0.6s;
-}
-
-.card.movie:hover {
-    background-color: #373743;
-}
-
-.card.movie img {
-    border-radius: 30px;
-}
-
-.card.movie .img-fluid {
-    width: 100%;
-    height: 100%;
-}
-
-.card.movie .card-body {
-    padding-left: 0;
-    color: #fff;
-}
-
-.card.movie .card-title {
-    font-weight: 800;
-}
-
-.card.movie .card-body .details {
-    color: #898A93;
-    font-weight: 500;
-}
-
-.card.movie .card-body .movie-year, 
-.card.movie .card-body .movie-country, 
-.card.movie .card-body .country-genres-divider,
-.card.movie .card-body .movie-genres {
     margin: 0;
 }
 
-.card.movie .card-body .movie-country, 
-.card.movie .card-body .country-genres-divider,
-.card.movie .card-body .movie-genres {
-    display: inline;
+p {
+    font-size: var(--regular-font-size);
+    line-height: 1.3em;
 }
 
-.card.movie .rating {
-    background-color: #38352D;
-    padding: 3px 10px;
-    border: 1px solid #886F1D;
-    border-radius: 40px;
-    display: inline-block;
+.green-text {
+    color: var(--light-green);
 }
 
-.card.movie .rating .fa-star {
-    color: #FFC700;
-}
-
-.card.movie .rating .score-value {
-    margin: 0 0 0 5px;
-}
-
-@media (min-width: 768px) {
-    .card.movie .col-md-1 {
-        width: 140px;
-        height: 170px;
-    }
-}
-
-/* Pagination */
- 
-.pagination .page-item .page-link {
-    background: #22242F;
-    border: 3px solid #373743;
-    color: #BEBEBE; 
-    font-weight: 600;
-    font-size: 1.1em;
-    text-align: center;
-    margin-right: 3px;
-    transition: ease 0.4s;
-}
-
-.pagination .page-item .page-link:focus {
-    box-shadow: none;
-}
-
-.pagination .num-item .page-link {
-    border-radius: 50%;
-    width: 3rem;
-    height: 3rem;
-}
-
-.pagination .num-item .page-link:hover {
-    color: #ffffff; 
-    background: #373743;
-}
-
-.pagination .direction-item .page-link {
-    border-radius: 20px;
-    width: 3.5rem;
-    font-size: 1.5em;
-    line-height: 2rem;
-}
-
-.pagination .direction-item .page-link:hover {
-    color: #F13E45;
-    font-size: 1.7em;
-}
-
-/* Forms */
-
-.form-label {
-    font-weight: 700;
-    font-size: 1.1rem;
-}
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-    -webkit-box-shadow:0 0 0 50px #22242F inset;
-    -webkit-text-fill-color: rgb(255, 255, 255);
-    transition: background-color 5000s ease-in-out 0s;
-}
-
-input {
-    -webkit-text-fill-color: #fff;
-}
-
-.form-control, .form-select {
-    color: #fff;
-    border: 1px solid #343a40;
-    border-radius: 40px;
-    background-color: #22242F;
-    line-height: 35px;
-}
-
-.form-control:focus, .form-select:focus {
-    box-shadow: none;
-    border: 1px solid #343a40;
-    background-color: #22242F;
-}
-
-.form-select, input[type="date"]::-webkit-calendar-picker-indicator {
-    cursor: pointer;
-    transition: ease 0.3s;
-}
-
-.form-select {
-    background-image: url(../down-arrow.png);
-    background-position: right 1rem center;
-    background-size: 20px 20px;
-}
-
-.form-select:hover {
-    background-image: url(../down-arrow-white.png);
-    background-position: right 1rem center;
-    background-size: 20px 20px;
-}
-
-input[type="date"]::-webkit-calendar-picker-indicator {
-    background: url(../calendar.png) #22242F no-repeat;
-    background-position: right 0.3rem center;
-    width: 20px;
-    height: 20px;
-}
-
-input[type="date"]::-webkit-calendar-picker-indicator:hover {
-    background: url(../calendar-white.png) no-repeat;
-    background-position: right 0.3rem center;
-}
-
-input:read-only, .form-select:disabled {
-    cursor: default;
-}
-
-.form-select:disabled, .form-select:disabled:hover {
-    background-color: #22242F;
-    background-image: none;
+.red-text, .error {
+    color: var(--dark-red);
 }
